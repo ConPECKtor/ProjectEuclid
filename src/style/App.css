@@ -1,6 +1,5 @@
 
 
-
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -81,8 +80,8 @@ section {
 @font-face {
   font-family: 'Montserrat';
   src: local("Montserrat-Light"),
-       url("./style/fonts/Montserrat-Light.woff2") format("woff2"),
-       url("./style/fonts/Montserrat-Light.woff") format("woff");
+       url("./fonts/Montserrat-Light.woff2") format("woff2"),
+       url("./fonts/Montserrat-Light.woff") format("woff");
   font-weight: 300;
   font-style: normal;
   font-display: fallback;
@@ -91,8 +90,8 @@ section {
 @font-face {
   font-family: 'Montserrat';
   src: local("Montserrat-Regular"),
-       url("./style/fonts/Montserrat-Regular.woff2") format("woff2"),
-       url("./style/fonts/Montserrat-Regular.woff") format("woff");
+       url("./fonts/Montserrat-Regular.woff2") format("woff2"),
+       url("./fonts/Montserrat-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
   font-display: fallback;
@@ -101,8 +100,8 @@ section {
 @font-face {
   font-family: 'Montserrat';
   src: local("Montserrat-SemiBold"),
-       url("./style/fonts/Montserrat-SemiBold.woff2") format("woff2"),
-       url("./style/fonts/Montserrat-SemiBold.woff") format("woff");
+       url("./fonts/Montserrat-SemiBold.woff2") format("woff2"),
+       url("./fonts/Montserrat-SemiBold.woff") format("woff");
   font-weight: 600;
   font-style: normal;
   font-display: fallback;
@@ -120,4 +119,3 @@ section {
 .semibald {
   font-weight: bold;
 }
-
