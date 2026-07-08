@@ -121,3 +121,46 @@ section {
   font-weight: bold;
 }
 
+
+
+/* Header */
+
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: aliceblue;
+  padding: 14px 75px;
+}
+
+.header__logobox {
+  display: flex;
+  gap: 12px;
+  margin-right: 200px;
+}
+
+.header__list {
+  display: flex;
+  gap: 85px;
+}
+
+
+.header__search {
+  display: inline-block;
+}
+
+
+
+
+/* ABOUT  */
+
+
+
+.about {
+  display: flex;
+}
+
+.about__card {
+  display: flex;
+}
