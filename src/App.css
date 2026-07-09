@@ -134,6 +134,20 @@ section {
   padding: 14px 75px;
 }
 
+
+.header__burger {
+  display: flex;
+  position: absolute;
+  max-width: 420px;
+  max-height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header__burgerButton {
+  display: none;
+}
+
 .header__logobox {
   display: flex;
   gap: 12px;
@@ -145,11 +159,32 @@ section {
   gap: 85px;
 }
 
-
-.header__search {
-  display: inline-block;
+.header__searchBurger {
+  display: none;
 }
 
+
+
+@media (max-width: 1024px) {
+  body {
+    background-color: tan;
+    color: black;
+  }
+
+  .header__burgerButton {
+    display: block;
+  }
+
+  .header__list {
+    display: none;
+  }
+
+  .header__logobox {
+    margin-right: 0px;
+  }
+
+
+}
 
 
 

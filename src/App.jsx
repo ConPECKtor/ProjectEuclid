@@ -1,7 +1,12 @@
 import "./App.css";
+
+import X from "./style/SVG/X.svg";
 import logo from "./style/SVG/logo.svg";
 import logotext from "./style/SVG/LogoText.svg";
 import search from "./style/SVG/search.svg";
+import closed_search from "./style/SVG/closed_search.svg";
+import burgerButton from "./style/SVG/burgerButton.svg";
+
 
 import about_1 from "./style/SVG/about_1.svg";
 import about_2 from "./style/SVG/about_2.svg";
@@ -10,6 +15,42 @@ function App() {
   return (
     <div className="App">
       <nav className="header">
+
+        <div className="header__burger">
+          <img src={X} alt="Лого" />
+          <ul className="header__burgerList">
+            <li className="header__burgerListItem">
+              <a href="#projects" class="header__burgerListItemLink">
+                <b>Проекты</b>
+              </a>
+            </li>
+            <li className="header__burgerListItem">
+              <a href="#about" class="header__burgerListItemLink">
+                <b>О нас</b>
+              </a>
+            </li>
+            <li className="header__burgerListItem">
+              <a href="#stages" class="header__burgerListItemLink">
+                <b>Этапы</b>
+              </a>
+            </li>
+            <li className="header__burgerListItem">
+              <a href="#reviews" class="header__burgerListItemLink">
+                <b>Отзывы</b>
+              </a>
+            </li>
+            <li className="header__burgerListItem">
+              <a href="#contacts" class="header__burgerListItemLink">
+                <b>Контакты</b>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div className="header__burgerButton">
+          <img src={burgerButton} alt="Кнопка для навигации (мобильная" />
+        </div>
+        
         <div className="header__logobox">
           <img src={logo} alt="Лого" />
           <img src={logotext} alt="Текст" />
@@ -41,12 +82,22 @@ function App() {
             </a>
           </li>
         </ul>
-        <div className="header__search">
+
+
+      <div className="header__searchBurger">
+        <input type="text" />
+        <img src={search} alt="Кнопка поиска" />
+        <img src={closed_search} alt="Кнопка закрытия поиска" />
+
+      </div>
+
+        <div className="header__searchButton">
           <img src={search} alt="Кнопка поиска" />
         </div>
       </nav>
       <div className="container">
         <main>
+          <div className="banner"></div>
           <div className="about">
             <div className="about__maintext">
               <h2>О Нас</h2>
@@ -72,7 +123,7 @@ function App() {
               <div className="about__cardCards">
                 <div className="about__cardCardsItem">
                   <img src={about_1} alt="Фигура" />
-                  <h3>Консультация с широким активом</h3>
+                  <p>Консультация с широким активом</p>
                   <p>
                     А также свежий взгляд на привычные вещи — безусловно
                     открывает новые горизонты для как самодостаточных,
@@ -81,7 +132,7 @@ function App() {
                 </div>
                 <div className="about__cardCardsItem">
                   <img src={about_2} alt="Фигура" />
-                  <h3>В своём стремлении повысить</h3>
+                  <p>В своём стремлении повысить</p>
                   <p>
                     Качество жизни, они забывают, что сплочённость команды
                     профессионалов представляет собой интересный эксперимент
