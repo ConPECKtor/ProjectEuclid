@@ -7,7 +7,6 @@ import search from "./style/SVG/search.svg";
 import closed_search from "./style/SVG/closed_search.svg";
 import burgerButton from "./style/SVG/burgerButton.svg";
 
-
 import about_1 from "./style/SVG/about_1.svg";
 import about_2 from "./style/SVG/about_2.svg";
 
@@ -15,9 +14,8 @@ function App() {
   return (
     <div className="App">
       <nav className="header">
-
         <div className="header__burger">
-          <img src={X} alt="Лого" />
+          <img src={X} alt="Лого" class="burger__close-button" />
           <ul className="header__burgerList">
             <li className="header__burgerListItem">
               <a href="#projects" class="header__burgerListItemLink">
@@ -50,7 +48,7 @@ function App() {
         <div className="header__burgerButton">
           <img src={burgerButton} alt="Кнопка для навигации (мобильная" />
         </div>
-        
+
         <div className="header__logobox">
           <img src={logo} alt="Лого" />
           <img src={logotext} alt="Текст" />
@@ -83,13 +81,11 @@ function App() {
           </li>
         </ul>
 
-
-      <div className="header__searchBurger">
-        <input type="text" />
-        <img src={search} alt="Кнопка поиска" />
-        <img src={closed_search} alt="Кнопка закрытия поиска" />
-
-      </div>
+        <div className="header__searchBurger">
+          <input type="text" />
+          <img src={search} alt="Кнопка поиска" />
+          <img src={closed_search} alt="Кнопка закрытия поиска" />
+        </div>
 
         <div className="header__searchButton">
           <img src={search} alt="Кнопка поиска" />
