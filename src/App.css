@@ -192,9 +192,9 @@ section {
   display: flex;
 }
 
-.container {
+/* .container {
   display: none;
-}
+} */
 
 @media (max-width: 1024px) {
   body {
