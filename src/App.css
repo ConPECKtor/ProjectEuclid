@@ -142,12 +142,12 @@ section {
   padding: 38px 50px;
   flex-direction: column;
   justify-content: start;
-  background-color: aqua;
+  background-color: white;
 }
 
-.header__burger--open {
+.header__burger--active {
   left: 0;
-}
+} 
 
 .burger__close-button {
   width: 23px;
@@ -180,7 +180,16 @@ section {
 
 .header__searchBurger {
   display: none;
+  position: absolute;
+
 }
+
+.header__searchBurger--active {
+  display: flex;
+  top: 0;
+}
+
+
 
 /* ABOUT  */
 
