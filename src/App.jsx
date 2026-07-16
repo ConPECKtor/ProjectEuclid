@@ -72,7 +72,7 @@ function Header({
 
       <div className="header__logobox">
         <img src={logo} alt="Лого" />
-        <img src={logotext} alt="Текст" />
+        <img src={logotext} alt="Текст" className="header__logobox--text" />
       </div>
       <ul className="header__list">
         <li className="header__listItem">
