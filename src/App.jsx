@@ -71,18 +71,21 @@ function Header({
       </div>
 
       <div className="header__logobox">
-        <img src={logo} alt="Лого" />
-        <img src={logotext} alt="Текст" />
+        <img src={logo} alt="Лого"  className="header__logoboxLogo"/>
+        <img src={logotext} alt="Текст" className="header__logoboxText" />
       </div>
+
+
+
       <ul className="header__list">
         <li className="header__listItem">
           <a href="#projects" className="header__listItemLink">
-            <b>Проекты</b>
+            <b>О нас</b>
           </a>
         </li>
         <li className="header__listItem">
           <a href="#about" className="header__listItemLink">
-            <b>О нас</b>
+            <b>Проекты</b>
           </a>
         </li>
         <li className="header__listItem">
