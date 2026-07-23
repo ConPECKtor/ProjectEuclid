@@ -119,12 +119,15 @@ section {
   margin: 0px auto;
 }
 
+/* .btn {
+  border: 20px 30px;
+  background-color: #ff9900;
+  padding: 15px 20px;
+} */
 
 :root {
-  --primaryButton: #FF9900
+  --primaryButton: #ff9900;
 }
-
-
 
 /* Header */
 
@@ -154,7 +157,7 @@ section {
 
 .header__burger--active {
   left: 0;
-} 
+}
 
 .burger__close-button {
   width: 23px;
@@ -185,8 +188,6 @@ section {
   min-width: 432px;
 }
 
-
-
 .header__searchBurger {
   display: flex;
   gap: 15px;
@@ -197,18 +198,16 @@ section {
 
 .header__searchBurgerText {
   border: none;
-  border-bottom: 1px solid #CACACA;
+  border-bottom: 1px solid #cacaca;
 }
 
 .header__searchBurgerText:focus {
   outline: none;
 }
 
-
 .header__searchBurger {
   display: none;
   position: absolute;
-
 }
 
 .header__searchBurger--active {
@@ -219,56 +218,53 @@ section {
 
 /* BANNER */
 
+main {
+  /* display: none; */
+}
 
 .banner {
   display: flex;
   position: relative;
   flex-direction: column;
-  justify-content: center;
-  align-items: start;
-  background-color: wheat;
-
-  padding: 30px 80px;
+  padding: 100px 80px;
+  background-color: aqua;
+  border-radius: 32px;
 }
 
-.banner__mainInfo {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-
-  gap: 90px;
-
+.banner__title {
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+  width: 51%;
+  margin-bottom: 24px;
 }
 
-
-.banner__mainInfoTitle {
-  font-size: 70px;
-}
-
-.banner__mainInfoDescription {
+.banner__desc {
   font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  width: 49%;
+  margin-bottom: 90px;
 }
 
-.banner__mainInfoButton {
+.banner__addOrder {
   width: 280px;
   height: 78px;
-  background-color: var(--primaryButton);
-  color: #FFFFFFFF;
-  font-size: 23px;
+  padding: 25px 39px;
+  background-color: #ff9900;
   border-radius: 16px;
+  color: #fff;
+  font-size: 23px;
+  font-weight: 600px;
 }
 
-.banner__backgrounds {
+.banner__backgroundsBtn {
   position: absolute;
-  top: 90%;
-  left: 50%;
-
+  bottom: 30px;
+  left: calc(50% - (15px + 20px + (15px / 2)));
   display: flex;
   gap: 20px;
 }
-
-
-
 
 /* ABOUT  */
 
@@ -279,8 +275,6 @@ section {
 .about__card {
   display: flex;
 }
-
-
 
 @media (max-width: 1024px) {
   body {
@@ -313,15 +307,12 @@ section {
     width: 116px;
     height: 28px;
   }
-
-
 }
 
 @media (max-width: 768px) {
   .header {
     padding: 20px 50px;
   }
-
 
   .header__logobox {
     height: 48px;
@@ -331,15 +322,12 @@ section {
     width: 116px;
     height: 28px;
   }
-
-  
 }
 
 @media (max-width: 420px) {
   .header {
-    padding: 23px;
+    padding: 17px;
   }
-
 
   .header__burger {
     width: 100vw;
@@ -360,7 +348,4 @@ section {
     width: 85px;
     height: 23px;
   }
-
-
 }
-

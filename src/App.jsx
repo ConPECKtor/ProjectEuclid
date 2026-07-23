@@ -11,7 +11,6 @@ import burgerButton from "./style/SVG/burgerButton.svg";
 import circleActive from "./style/SVG/CircleA.svg";
 import circleDefault from "./style/SVG/CircleD.svg";
 
-
 import about_1 from "./style/SVG/about_1.svg";
 import about_2 from "./style/SVG/about_2.svg";
 
@@ -138,23 +137,28 @@ function Main() {
   return (
     <main>
       <div className="banner">
-        <div className="banner__mainInfo">
+        <h2 className="banner__title">Проектные решения любой сложности</h2>
+        <p className="banner__desc">
+          Есть над чем задуматься: базовые сценарии поведения пользователей и по
+          сей день остаются уделом проектантов
+        </p>
+        <button className="banner__addOrder">Заказать расчёт</button>
+        {/* <div className="banner__mainInfo">
           <div className="banner__mainInfoTexts">
             <p className="banner__mainInfoTitle">Проектные решения любой сложности</p>
             <p className="banner__mainInfoDescription">
-              Есть над чем задуматься: базовые сценарии поведения пользователей
-              и по сей день остаются уделом проектантов
+              Есть над чем задуматься: базовые сценарии поведения пользователей
+              и по сей день остаются уделом проектантов
             </p>
           </div>
 
           <button className="banner__mainInfoButton">Заказать расчёт</button>
-        </div>
+        </div> */}
 
-        <div className="banner__backgrounds">
+        <div className="banner__backgroundsBtn">
           <img src={circleActive} alt="" />
           <img src={circleDefault} alt="" />
           <img src={circleDefault} alt="" />
-
         </div>
       </div>
       <div className="about">
@@ -171,8 +175,8 @@ function Main() {
           <div className="about__cardPhoto">
             <div className="about__cardPhotoFooter">
               <p>
-                Принимая во внимание показатели успешности, перспективное
-                планирование способствует подготовке и реализации новых
+                Принимая во внимание показатели успешности, перспективное
+                планирование способствует подготовке и реализации новых
                 принципов
               </p>
               <button>Подробнее</button>
@@ -182,18 +186,18 @@ function Main() {
           <div className="about__cardCards">
             <div className="about__cardCardsItem">
               <img src={about_1} alt="Фигура" />
-              <p>Консультация с широким активом</p>
+              <p>Консультация с широким активом</p>
               <p>
-                А также свежий взгляд на привычные вещи — безусловно открывает
-                новые горизонты для как самодостаточных, так и внешне зависимых
+                А также свежий взгляд на привычные вещи — безусловно открывает
+                новые горизонты для как самодостаточных, так и внешне зависимых
                 концептуальных решений
               </p>
             </div>
             <div className="about__cardCardsItem">
               <img src={about_2} alt="Фигура" />
-              <p>В своём стремлении повысить</p>
+              <p>В своём стремлении повысить</p>
               <p>
-                Качество жизни, они забывают, что сплочённость команды
+                Качество жизни, они забывают, что сплочённость команды
                 профессионалов представляет собой интересный эксперимент
                 проверки прогресса профессионального сообщества
               </p>
