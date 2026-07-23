@@ -8,6 +8,10 @@ import search from "./style/SVG/search.svg";
 import closed_search from "./style/SVG/closed_search.svg";
 import burgerButton from "./style/SVG/burgerButton.svg";
 
+import circleActive from "./style/SVG/CircleA.svg";
+import circleDefault from "./style/SVG/CircleD.svg";
+
+
 import about_1 from "./style/SVG/about_1.svg";
 import about_2 from "./style/SVG/about_2.svg";
 
@@ -71,11 +75,9 @@ function Header({
       </div>
 
       <div className="header__logobox">
-        <img src={logo} alt="Лого"  className="header__logoboxLogo"/>
+        <img src={logo} alt="Лого" className="header__logoboxLogo" />
         <img src={logotext} alt="Текст" className="header__logoboxText" />
       </div>
-
-
 
       <ul className="header__list">
         <li className="header__listItem">
@@ -110,7 +112,7 @@ function Header({
           searchActive ? "header__searchBurger--active" : ""
         }`}
       >
-        <input type="text" />
+        <input type="text" className="header__searchBurgerText" />
         <img src={search} alt="Кнопка поиска" />
         <img
           src={closed_search}
@@ -135,7 +137,26 @@ function Header({
 function Main() {
   return (
     <main>
-      <div className="banner"></div>
+      <div className="banner">
+        <div className="banner__mainInfo">
+          <div className="banner__mainInfoTexts">
+            <p className="banner__mainInfoTitle">Проектные решения любой сложности</p>
+            <p className="banner__mainInfoDescription">
+              Есть над чем задуматься: базовые сценарии поведения пользователей
+              и по сей день остаются уделом проектантов
+            </p>
+          </div>
+
+          <button className="banner__mainInfoButton">Заказать расчёт</button>
+        </div>
+
+        <div className="banner__backgrounds">
+          <img src={circleActive} alt="" />
+          <img src={circleDefault} alt="" />
+          <img src={circleDefault} alt="" />
+
+        </div>
+      </div>
       <div className="about">
         <div className="about__maintext">
           <h2>О Нас</h2>

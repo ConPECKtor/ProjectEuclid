@@ -115,9 +115,16 @@ section {
 }
 
 .container {
-  width: 1170px;
+  width: 1770px;
   margin: 0px auto;
 }
+
+
+:root {
+  --primaryButton: #FF9900
+}
+
+
 
 /* Header */
 
@@ -178,6 +185,26 @@ section {
   min-width: 432px;
 }
 
+
+
+.header__searchBurger {
+  display: flex;
+  gap: 15px;
+  border-radius: 24px;
+  background-color: white;
+  padding: 16px 13px 16px 32px;
+}
+
+.header__searchBurgerText {
+  border: none;
+  border-bottom: 1px solid #CACACA;
+}
+
+.header__searchBurgerText:focus {
+  outline: none;
+}
+
+
 .header__searchBurger {
   display: none;
   position: absolute;
@@ -190,21 +217,70 @@ section {
   left: 70%;
 }
 
+/* BANNER */
+
+
+.banner {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  background-color: wheat;
+
+  padding: 30px 80px;
+}
+
+.banner__mainInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+
+  gap: 90px;
+
+}
+
+
+.banner__mainInfoTitle {
+  font-size: 70px;
+}
+
+.banner__mainInfoDescription {
+  font-size: 24px;
+}
+
+.banner__mainInfoButton {
+  width: 280px;
+  height: 78px;
+  background-color: var(--primaryButton);
+  color: #FFFFFFFF;
+  font-size: 23px;
+  border-radius: 16px;
+}
+
+.banner__backgrounds {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+
+  display: flex;
+  gap: 20px;
+}
+
+
 
 
 /* ABOUT  */
 
 .about {
-  display: flex;
+  display: none;
 }
 
 .about__card {
   display: flex;
 }
 
-.container {
-  display: none;
-}
+
 
 @media (max-width: 1024px) {
   body {
