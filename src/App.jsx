@@ -226,14 +226,12 @@ function Euclid() {
 
   return (
     <>
-      <div>
-        <Header
-          burgerActive={burgerActive}
-          setBurgerActive={setBurgerActive}
-          searchActive={searchActive}
-          setSearchActive={setSearchActive}
-        />
-      </div>
+      <Header
+        burgerActive={burgerActive}
+        setBurgerActive={setBurgerActive}
+        searchActive={searchActive}
+        setSearchActive={setSearchActive}
+      />
       <div className="container">
         <Main />
         <Footer />

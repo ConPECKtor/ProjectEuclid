@@ -3,6 +3,17 @@ html {
   scroll-behavior: smooth;
 }
 
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
 *,
 *::before,
 *::after {
@@ -61,7 +72,6 @@ img {
 body {
   min-width: 320px;
   font-family: "Montserrat", sans-serif;
-  margin: 0;
 }
 
 section {
@@ -140,7 +150,7 @@ section {
 }
 
 .container {
-  width: 1770px;
+  max-width: min(90%, 1770px);
   margin: 0px auto;
 }
 
@@ -159,14 +169,20 @@ section {
 .header {
   display: flex;
   position: relative;
+
+
   justify-content: space-between;
+  width: 100%;
   align-items: center;
-  background-color: aliceblue;
+  
+  margin-bottom: 50px;
   padding: 14px 75px;
+
+  background-color: aliceblue;
   border-radius: 0 0 32px 32px;
   background-color: red;
 
-  margin-bottom: 50px;
+  
 }
 
 .header__burger {
@@ -286,7 +302,7 @@ main {
   font-size: 70px;
   font-weight: 800;
   color: #fff;
-  width: 51%;
+  width: 54%;
   margin-bottom: 24px;
 }
 
@@ -306,7 +322,7 @@ main {
   border-radius: 16px;
   color: #fff;
   font-size: 23px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 .banner__backgroundsBtn {
@@ -342,12 +358,23 @@ main {
   display: flex;
 }
 
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 1024px) {
 
-  .container {
-    width: 924px;
+  /* .container {
+    max-width: 924px;
     margin: 0px auto;
-  }
+  } */
 
   body {
     background-color: tan;
@@ -409,10 +436,10 @@ main {
 
 @media (max-width: 768px) {
 
-  .container {
-    width: 668px;
+  /* .container {
+    max-width: 668px;
     margin: 0px auto;
-  }
+  } */
 
   .header {
     padding: 20px 50px;
@@ -450,11 +477,11 @@ main {
 
 @media (max-width: 420px) {
 
-  .container {
-    width: 290px;
+  /* .container {
+    max-width: 290px;
     height: 308px;
     margin: 0px auto;
-  }
+  } */
 
   .header {
     padding: 17px;
@@ -481,7 +508,7 @@ main {
   }
 
   .banner {
-    padding: 60px 21px;
+    padding: 59px 21px;
     align-items: center;
   }
 
@@ -496,7 +523,7 @@ main {
     font-weight: 600;
     color: #fff;
     width: 83%;
-    margin-bottom: 60px;
+    margin-bottom: 32px;
   }
 
   .banner__addOrder {
