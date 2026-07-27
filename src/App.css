@@ -481,24 +481,30 @@ main {
   }
 
   .banner {
-    padding: 130px 40px;
+    padding: 60px 21px;
     align-items: center;
   }
 
 
   .banner__title {
-    font-size: 50px;
+    font-size: 20px;
     width: 83%;
   }
   
   .banner__desc {
-    font-size: 20px;
+    font-size: 12px;
     font-weight: 600;
     color: #fff;
     width: 83%;
     margin-bottom: 60px;
   }
 
+  .banner__addOrder {
+    width: 162px;
+    height: 41px;
+    padding: 13px 28px;
+    font-size: 12px;
+  }
 
 
 
