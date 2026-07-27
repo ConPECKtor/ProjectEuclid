@@ -102,6 +102,31 @@ section {
   font-display: fallback;
 }
 
+@font-face {
+  font-family: "Montserrat";
+  src:
+    local("Montserrat-Bold"),
+    url("./style/fonts/Montserrat-Bold.woff2") format("woff2"),
+    url("./style/fonts/Montserrat-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: fallback;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src:
+    local("Montserrat-ExtraBold"),
+    url("./style/fonts/Montserrat-ExtraBold.woff2") format("woff2"),
+    url("./style/fonts/Montserrat-ExtraBold.woff") format("woff");
+  font-weight: 800;
+  font-style: normal;
+  font-display: fallback;
+}
+
+
+
+
 * p {
   color: #333333;
 }
@@ -140,6 +165,8 @@ section {
   padding: 14px 75px;
   border-radius: 0 0 32px 32px;
   background-color: red;
+
+  margin-bottom: 50px;
 }
 
 .header__burger {
@@ -190,16 +217,33 @@ section {
 
 .header__searchBurger {
   display: flex;
-  gap: 15px;
+  width: 539px;        
+  height: 60px;
   border-radius: 24px;
   background-color: white;
   padding: 16px 13px 16px 32px;
 }
 
 .header__searchBurgerText {
+  width: 421px;
   border: none;
   border-bottom: 1px solid #cacaca;
+  margin-right: 11px;
 }
+
+.header__searchBurgerSearch {
+  width: 24px;
+  height: 24px;
+  margin-right: 20px;
+}
+
+.header__searchBurgerClose {
+  width: 24px;
+  height: 24px;
+}
+
+
+
 
 .header__searchBurgerText:focus {
   outline: none;
@@ -227,13 +271,20 @@ main {
   position: relative;
   flex-direction: column;
   padding: 100px 80px;
-  background-color: aqua;
+  background-color: rgb(55, 77, 77);
   border-radius: 32px;
+
+  transition: background-image 0.4s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+  margin-bottom: 50px;
 }
 
 .banner__title {
-  font-size: 48px;
-  font-weight: 600;
+  font-size: 70px;
+  font-weight: 800;
   color: #fff;
   width: 51%;
   margin-bottom: 24px;
@@ -241,7 +292,7 @@ main {
 
 .banner__desc {
   font-size: 24px;
-  font-weight: 600;
+  font-weight: 700;
   color: #fff;
   width: 49%;
   margin-bottom: 90px;
@@ -255,7 +306,7 @@ main {
   border-radius: 16px;
   color: #fff;
   font-size: 23px;
-  font-weight: 600px;
+  font-weight: 700px;
 }
 
 .banner__backgroundsBtn {
@@ -265,6 +316,21 @@ main {
   display: flex;
   gap: 20px;
 }
+
+
+
+
+.circleBTN {
+  color: #b6b6b6;
+  width: 15px;
+  height: 15px;
+}
+
+
+.circleBTN--active {
+  color: #FFFFFF;
+}
+
 
 /* ABOUT  */
 
@@ -277,6 +343,12 @@ main {
 }
 
 @media (max-width: 1024px) {
+
+  .container {
+    width: 924px;
+    margin: 0px auto;
+  }
+
   body {
     background-color: tan;
     color: black;
@@ -284,6 +356,7 @@ main {
 
   .header {
     padding: 26px 50px;
+    margin-bottom: 40px;
   }
 
   .header__burgerButton {
@@ -307,9 +380,40 @@ main {
     width: 116px;
     height: 28px;
   }
+
+
+  .banner {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    padding: 160px 77px;
+  }
+
+  .banner__title {
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+    width: 83%;
+    margin-bottom: 16px;
+  }
+  
+  .banner__desc {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    width: 71%;
+    margin-bottom: 60px;
+  }
+
 }
 
 @media (max-width: 768px) {
+
+  .container {
+    width: 668px;
+    margin: 0px auto;
+  }
+
   .header {
     padding: 20px 50px;
   }
@@ -322,9 +426,36 @@ main {
     width: 116px;
     height: 28px;
   }
+
+  .banner {
+    padding: 130px 40px;
+  }
+
+
+  .banner__title {
+    font-size: 50px;
+    width: 83%;
+  }
+  
+  .banner__desc {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    width: 83%;
+    margin-bottom: 60px;
+  }
+
+
 }
 
 @media (max-width: 420px) {
+
+  .container {
+    width: 290px;
+    height: 308px;
+    margin: 0px auto;
+  }
+
   .header {
     padding: 17px;
   }
@@ -348,4 +479,27 @@ main {
     width: 85px;
     height: 23px;
   }
+
+  .banner {
+    padding: 130px 40px;
+    align-items: center;
+  }
+
+
+  .banner__title {
+    font-size: 50px;
+    width: 83%;
+  }
+  
+  .banner__desc {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    width: 83%;
+    margin-bottom: 60px;
+  }
+
+
+
+
 }

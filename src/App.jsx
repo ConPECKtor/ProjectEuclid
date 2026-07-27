@@ -8,11 +8,43 @@ import search from "./style/SVG/search.svg";
 import closed_search from "./style/SVG/closed_search.svg";
 import burgerButton from "./style/SVG/burgerButton.svg";
 
-import circleActive from "./style/SVG/CircleA.svg";
-import circleDefault from "./style/SVG/CircleD.svg";
+import { Circle } from "./style/SVG/Circle.jsx";
 
 import about_1 from "./style/SVG/about_1.svg";
 import about_2 from "./style/SVG/about_2.svg";
+
+import main1 from './style/IMG/main_1.png';
+import main2 from './style/IMG/main_2.png';
+import main3 from './style/IMG/main_3.png';
+
+const bannerIMG = [main1, main2, main3];
+
+function Banner() {
+  let [activeBanner, setActiveBanner] = useState(0);
+
+  let currentBanner = bannerIMG[activeBanner];
+
+  return (
+    <section className="banner" style={{ backgroundImage: `url(${currentBanner})` }}>
+      <h2 className="banner__title">Проектные решения любой сложности</h2>
+      <p className="banner__desc">
+        Есть над чем задуматься: базовые сценарии поведения пользователей и по
+        сей день остаются уделом проектантов
+      </p>
+      <button className="banner__addOrder">Заказать расчёт</button>
+
+      <div className="banner__backgroundsBtn">
+        {bannerIMG.map((_, index) => (
+          <Circle
+            id={index}
+            active={activeBanner === index}
+            onClick={() => setActiveBanner(index)}
+          />
+        ))}
+      </div>
+    </section>
+  );
+}
 
 function Header({
   burgerActive,
@@ -112,12 +144,13 @@ function Header({
         }`}
       >
         <input type="text" className="header__searchBurgerText" />
-        <img src={search} alt="Кнопка поиска" />
+        <img src={search} alt="Кнопка поиска" className="header__searchBurgerSearch" />
         <img
           src={closed_search}
           alt="Кнопка закрытия поиска"
           onClick={() => setSearchActive(false)}
           style={{ cursor: "pointer" }}
+          className="header__searchBurgerClose"
         />
       </div>
 
@@ -133,78 +166,52 @@ function Header({
   );
 }
 
+
+function About() {
+  return(
+    <section className="about">
+      <div className="about__card">
+        <div className="about__cardPhoto">
+          <div className="about__cardPhotoFooter">
+            <p>
+              Принимая во внимание показатели успешности, перспективное
+              планирование способствует подготовке и реализации новых принципов
+            </p>
+            <button>Подробнее</button>
+          </div>
+        </div>
+
+        <div className="about__cardCards">
+          <div className="about__cardCardsItem">
+            <img src={about_1} alt="Фигура" />
+            <p>Консультация с широким активом</p>
+            <p>
+              А также свежий взгляд на привычные вещи — безусловно открывает
+              новые горизонты для как самодостаточных, так и внешне зависимых
+              концептуальных решений
+            </p>
+          </div>
+          <div className="about__cardCardsItem">
+            <img src={about_2} alt="Фигура" />
+            <p>В своём стремлении повысить</p>
+            <p>
+              Качество жизни, они забывают, что сплочённость команды
+              профессионалов представляет собой интересный эксперимент проверки
+              прогресса профессионального сообщества
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+
 function Main() {
   return (
     <main>
-      <div className="banner">
-        <h2 className="banner__title">Проектные решения любой сложности</h2>
-        <p className="banner__desc">
-          Есть над чем задуматься: базовые сценарии поведения пользователей и по
-          сей день остаются уделом проектантов
-        </p>
-        <button className="banner__addOrder">Заказать расчёт</button>
-        {/* <div className="banner__mainInfo">
-          <div className="banner__mainInfoTexts">
-            <p className="banner__mainInfoTitle">Проектные решения любой сложности</p>
-            <p className="banner__mainInfoDescription">
-              Есть над чем задуматься: базовые сценарии поведения пользователей
-              и по сей день остаются уделом проектантов
-            </p>
-          </div>
-
-          <button className="banner__mainInfoButton">Заказать расчёт</button>
-        </div> */}
-
-        <div className="banner__backgroundsBtn">
-          <img src={circleActive} alt="" />
-          <img src={circleDefault} alt="" />
-          <img src={circleDefault} alt="" />
-        </div>
-      </div>
-      <div className="about">
-        <div className="about__maintext">
-          <h2>О Нас</h2>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
-            repellat et atque sequi incidunt voluptas quaerat suscipit, esse
-            porro aliquam voluptatem sunt veritatis accusantium quibusdam,
-            tempore non dolorum, rerum dignissimos?
-          </p>
-        </div>
-        <div className="about__card">
-          <div className="about__cardPhoto">
-            <div className="about__cardPhotoFooter">
-              <p>
-                Принимая во внимание показатели успешности, перспективное
-                планирование способствует подготовке и реализации новых
-                принципов
-              </p>
-              <button>Подробнее</button>
-            </div>
-          </div>
-
-          <div className="about__cardCards">
-            <div className="about__cardCardsItem">
-              <img src={about_1} alt="Фигура" />
-              <p>Консультация с широким активом</p>
-              <p>
-                А также свежий взгляд на привычные вещи — безусловно открывает
-                новые горизонты для как самодостаточных, так и внешне зависимых
-                концептуальных решений
-              </p>
-            </div>
-            <div className="about__cardCardsItem">
-              <img src={about_2} alt="Фигура" />
-              <p>В своём стремлении повысить</p>
-              <p>
-                Качество жизни, они забывают, что сплочённость команды
-                профессионалов представляет собой интересный эксперимент
-                проверки прогресса профессионального сообщества
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Banner />
+      <About />
     </main>
   );
 }
