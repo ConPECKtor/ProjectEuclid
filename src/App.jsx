@@ -13,9 +13,10 @@ import { Circle } from "./style/SVG/Circle.jsx";
 import about_1 from "./style/SVG/about_1.svg";
 import about_2 from "./style/SVG/about_2.svg";
 
-import main1 from './style/IMG/main_1.png';
-import main2 from './style/IMG/main_2.png';
-import main3 from './style/IMG/main_3.png';
+import main1 from "./style/IMG/main_1.png";
+import main2 from "./style/IMG/main_2.png";
+import main3 from "./style/IMG/main_3.png";
+import main4 from "./style/IMG/main_1.png";
 
 const bannerIMG = [main1, main2, main3];
 
@@ -25,7 +26,10 @@ function Banner() {
   let currentBanner = bannerIMG[activeBanner];
 
   return (
-    <section className="banner" style={{ backgroundImage: `url(${currentBanner})` }}>
+    <section
+      className="banner"
+      style={{ backgroundImage: `url(${currentBanner})` }}
+    >
       <h2 className="banner__title">Проектные решения любой сложности</h2>
       <p className="banner__desc">
         Есть над чем задуматься: базовые сценарии поведения пользователей и по
@@ -144,7 +148,11 @@ function Header({
         }`}
       >
         <input type="text" className="header__searchBurgerText" />
-        <img src={search} alt="Кнопка поиска" className="header__searchBurgerSearch" />
+        <img
+          src={search}
+          alt="Кнопка поиска"
+          className="header__searchBurgerSearch"
+        />
         <img
           src={closed_search}
           alt="Кнопка закрытия поиска"
@@ -166,9 +174,8 @@ function Header({
   );
 }
 
-
 function About() {
-  return(
+  return (
     <section className="about">
       <div className="about__card">
         <div className="about__cardPhoto">
@@ -203,9 +210,8 @@ function About() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
 
 function Main() {
   return (
@@ -226,14 +232,12 @@ function Euclid() {
 
   return (
     <>
-      <div>
-        <Header
-          burgerActive={burgerActive}
-          setBurgerActive={setBurgerActive}
-          searchActive={searchActive}
-          setSearchActive={setSearchActive}
-        />
-      </div>
+      <Header
+        burgerActive={burgerActive}
+        setBurgerActive={setBurgerActive}
+        searchActive={searchActive}
+        setSearchActive={setSearchActive}
+      />
       <div className="container">
         <Main />
         <Footer />
