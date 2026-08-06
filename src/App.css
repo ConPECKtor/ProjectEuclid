@@ -342,12 +342,24 @@ main {
   gap: 32px;
 }
 
+.about__card {
+  display: flex;
+  align-items: center;
+  max-width: 870px;
+  padding: 65px 120px 65px 60px;
+  gap: 50px;
+  
+  border: 1px solid #CACACA;
+  border-radius: 32px;
+}
+
 
 .about__card__banner {
   display: flex;
   grid-area: card1;
   align-items: end;
-
+  padding: 0px;
+  
   border-radius: 32PX;
 }
 
@@ -383,16 +395,7 @@ main {
   margin-bottom: 50px; 
 }
 
-.about__card {
-  display: flex;
-  align-items: center;
-  max-width: 870px;
-  padding: 65px 120px 65px 60px;
-  gap: 50px;
-  
-  border: 1px solid #CACACA;
-  border-radius: 32px;
-}
+
 
 
 

@@ -205,7 +205,7 @@ function About() {
       </p>
       
       <div className="about__cards">
-        <div className="about__card__banner" style={
+        <div className="about__card about__card__banner" style={
           { backgroundImage: `url(${about_png})` }
         }>
           <div className="about__card__shadowbox">
@@ -217,7 +217,7 @@ function About() {
           </div>
         </div>
 
-        <div className="about__card ">
+        <div className="about__card">
           <img src={about_1} alt="" />
           <div className="about__card__text">
             <h4 className="about__card__text--title">
@@ -231,7 +231,7 @@ function About() {
           </div>
         </div>
 
-        <div className="about__card">
+        <div className="about__card ">
           <img src={about_2} alt="" />
           <div className="about__card__text">
             <h4 className="about__card__text--title">
