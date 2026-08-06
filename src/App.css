@@ -72,10 +72,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-section {
-  padding-top: 87px;
+/* section { */
+/* padding-top: 87px;
   padding-bottom: 160px;
-}
+} */
 
 @font-face {
   font-family: "Montserrat";
@@ -332,25 +332,23 @@ main {
 
 /* ABOUT  */
 
-
 .about__cards {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
-    'card1 card2'
-    'card1 card3';
+    "card1 card2"
+    "card1 card3";
   gap: 32px;
 }
-
 
 .about__card__banner {
   display: flex;
   grid-area: card1;
   align-items: end;
-
-  border-radius: 32PX;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 32px;
 }
-
 
 .about__card__shadowbox {
   display: flex;
@@ -360,9 +358,8 @@ main {
   justify-content: space-between;
   background-color: #00000080;
   opacity: 50%;
-  border-radius: 32PX;
+  border-radius: 32px;
 }
-
 
 .about__card:nth-child(2) {
   grid-area: card2;
@@ -372,15 +369,14 @@ main {
   grid-area: card3;
 }
 
-
 .about__title {
   font-size: 48px;
-  margin-bottom: 20px; 
+  margin-bottom: 20px;
 }
 
 .about__desc {
   max-width: 1235px;
-  margin-bottom: 50px; 
+  margin-bottom: 50px;
 }
 
 .about__card {
@@ -389,27 +385,23 @@ main {
   max-width: 870px;
   padding: 65px 120px 65px 60px;
   gap: 50px;
-  
-  border: 1px solid #CACACA;
+
+  border: 1px solid #cacaca;
   border-radius: 32px;
 }
 
-
-
-
-
-
 /* HowWork */
 
+.howwork {
+  display: none;
+}
 
 .howworkColumns {
   display: flex;
   align-items: end;
 
   gap: 142px;
-
 }
-
 
 .howwork__title {
   font-size: 48px;
@@ -421,13 +413,11 @@ main {
   max-width: 758px;
 }
 
-
 .howwork__mainSteps {
   display: flex;
   gap: 85px;
   margin-bottom: 45px;
 }
-
 
 .howwork__mainTitle {
   font-weight: 700;
@@ -435,13 +425,10 @@ main {
   margin-bottom: 8px;
 }
 
-
-
 .howwork__mainDesc {
   max-width: 758px;
   font-size: 16px;
 }
-
 
 .howwork__buttonMore {
   padding: 20px 38px;
@@ -451,7 +438,6 @@ main {
 .howwork__buttonDeal {
   padding: 20px 38px;
 }
-
 
 .howwork__photo {
   max-width: 870px;
@@ -463,13 +449,19 @@ main {
   background-size: cover;
 }
 
-
-
+footer {
+  display: none;
+}
 
 @media (max-width: 1440px) {
   /* .container {
     max-width: 1300px;
   } */
+
+  .about__card {
+    gap: 25px;
+    padding: 35px 30px;
+  }
 }
 
 @media (max-width: 1024px) {
@@ -532,6 +524,29 @@ main {
     width: 71%;
     margin-bottom: 60px;
   }
+
+  .about__desc {
+    width: 100%;
+    margin-bottom: 60px;
+  }
+
+  .about__cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "card1"
+      "card2"
+      "card3";
+    gap: 32px;
+  }
+
+  .about__card__banner {
+    height: 640px;
+  }
+
+  .about__card {
+    height: 295px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -571,14 +586,11 @@ main {
   }
 }
 
-
 @media (max-width: 520px) {
   .banner {
     align-items: center;
   }
 }
-
-
 
 @media (max-width: 500px) {
   /* .container {
