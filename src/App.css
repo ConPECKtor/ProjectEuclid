@@ -332,13 +332,139 @@ main {
 
 /* ABOUT  */
 
-.about {
-  display: none;
+
+.about__cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    'card1 card2'
+    'card1 card3';
+  gap: 32px;
+}
+
+
+.about__card__banner {
+  display: flex;
+  grid-area: card1;
+  align-items: end;
+
+  border-radius: 32PX;
+}
+
+
+.about__card__shadowbox {
+  display: flex;
+  max-width: 868px;
+  padding: 50px;
+  gap: 160px;
+  justify-content: space-between;
+  background-color: #00000080;
+  opacity: 50%;
+  border-radius: 32PX;
+}
+
+
+.about__card:nth-child(2) {
+  grid-area: card2;
+}
+
+.about__card:nth-child(3) {
+  grid-area: card3;
+}
+
+
+.about__title {
+  font-size: 48px;
+  margin-bottom: 20px; 
+}
+
+.about__desc {
+  max-width: 1235px;
+  margin-bottom: 50px; 
 }
 
 .about__card {
   display: flex;
+  align-items: center;
+  max-width: 870px;
+  padding: 65px 120px 65px 60px;
+  gap: 50px;
+  
+  border: 1px solid #CACACA;
+  border-radius: 32px;
 }
+
+
+
+
+
+
+/* HowWork */
+
+
+.howworkColumns {
+  display: flex;
+  align-items: end;
+
+  gap: 142px;
+
+}
+
+
+.howwork__title {
+  font-size: 48px;
+  margin-bottom: 50px;
+}
+
+.howwork__main {
+  display: inline-block;
+  max-width: 758px;
+}
+
+
+.howwork__mainSteps {
+  display: flex;
+  gap: 85px;
+  margin-bottom: 45px;
+}
+
+
+.howwork__mainTitle {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+
+
+.howwork__mainDesc {
+  max-width: 758px;
+  font-size: 16px;
+}
+
+
+.howwork__buttonMore {
+  padding: 20px 38px;
+  margin-right: 32px;
+}
+
+.howwork__buttonDeal {
+  padding: 20px 38px;
+}
+
+
+.howwork__photo {
+  max-width: 870px;
+  max-height: 460px;
+
+  transition: background-image 0.4s ease-in-out;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
 
 @media (max-width: 1440px) {
   /* .container {
@@ -445,7 +571,16 @@ main {
   }
 }
 
-@media (max-width: 420px) {
+
+@media (max-width: 520px) {
+  .banner {
+    align-items: center;
+  }
+}
+
+
+
+@media (max-width: 500px) {
   /* .container {
     max-width: 290px;
     height: 308px;
