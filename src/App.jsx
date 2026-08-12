@@ -6,7 +6,6 @@ import logo from "./style/SVG/logo.svg";
 import { Logotext } from "./style/SVG/Logotext.jsx";
 import { LogoIcon } from "./style/SVG/Logoicon.jsx";
 
-
 import logotext from "./style/SVG/LogoText.svg";
 import search from "./style/SVG/search.svg";
 import closed_search from "./style/SVG/closed_search.svg";
@@ -207,11 +206,10 @@ function About() {
         высококачественный прототип будущего проекта способствует повышению
         качества экспериментов.
       </p>
-      
+
       <div className="about__cards">
-        <div className="about__card about__card__banner" style={
-          { backgroundImage: `url(${about_png})` }
-        }>
+        <div className="about__card about__card__banner">
+          <div className="about__card__banner--background"></div>
           <div className="about__card__shadowbox">
             <p className="about__card__shadowbox--desc">
               Принимая во внимание показатели успешности, перспективное
@@ -298,11 +296,10 @@ function HowWork() {
           <button className="howwork__buttonDeal">Договор</button>
         </div>
 
-        <div className="howwork__photo" 
-            style={{ backgroundImage: `url(${currentStep})` }}>
-
-
-        </div>
+        <div
+          className="howwork__photo"
+          style={{ backgroundImage: `url(${currentStep})` }}
+        ></div>
       </div>
     </section>
   );
@@ -330,7 +327,7 @@ function Main() {
       <Banner />
       <About />
       <HowWork />
-      <QNA/>
+      <QNA />
     </main>
   );
 }
@@ -341,7 +338,7 @@ function Footer() {
       <div className="footer__left">
         <div className="footer__left--logoBox">
           <LogoIcon className={"footer__left--logoIcon"} />
-          <Logotext className={"footer__left--logoText"}/>
+          <Logotext className={"footer__left--logoText"} />
         </div>
 
         <ul className="footer__left--list">
