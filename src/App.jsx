@@ -3,6 +3,10 @@ import { useState } from "react";
 
 import X from "./style/SVG/X.svg";
 import logo from "./style/SVG/logo.svg";
+import { Logotext } from "./style/SVG/Logotext.jsx";
+import { LogoIcon } from "./style/SVG/Logoicon.jsx";
+
+
 import logotext from "./style/SVG/LogoText.svg";
 import search from "./style/SVG/search.svg";
 import closed_search from "./style/SVG/closed_search.svg";
@@ -218,7 +222,7 @@ function About() {
         </div>
 
         <div className="about__card ">
-          <img src={about_1} alt="" />
+          <img src={about_1} alt="" className="about__card__svg" />
           <div className="about__card__text">
             <h4 className="about__card__text--title">
               Консультация c широким активом
@@ -232,7 +236,7 @@ function About() {
         </div>
 
         <div className="about__card">
-          <img src={about_2} alt="" />
+          <img src={about_2} alt="" className="about__card__svg" />
           <div className="about__card__text">
             <h4 className="about__card__text--title">
               В своём стремлении повысить
@@ -326,6 +330,7 @@ function Main() {
       <Banner />
       <About />
       <HowWork />
+      <QNA/>
     </main>
   );
 }
@@ -335,18 +340,18 @@ function Footer() {
     <footer>
       <div className="footer__left">
         <div className="footer__left--logoBox">
-          <img src={logo} alt="Лого" className="" />
-          <img src={logotext} alt="Текст" className="" />
+          <LogoIcon className={"footer__left--logoIcon"} />
+          <Logotext className={"footer__left--logoText"}/>
         </div>
 
         <ul className="footer__left--list">
-          <li>О нас</li>
-          <li>Проекты</li>
-          <li>Отзывы</li>
-          <li>Договор оферты</li>
-          <li>Договор подряда</li>
-          <li>Конфиденциальность</li>
-          <li>Партнёрское соглашение</li>
+          <li className="footer__left--itemList">О нас</li>
+          <li className="footer__left--itemList">Проекты</li>
+          <li className="footer__left--itemList">Отзывы</li>
+          <li className="footer__left--itemList">Договор оферты</li>
+          <li className="footer__left--itemList">Договор подряда</li>
+          <li className="footer__left--itemList">Конфиденциальность</li>
+          <li className="footer__left--itemList">Партнёрское соглашение</li>
         </ul>
 
         <div className="footer__left--socials">
@@ -355,7 +360,7 @@ function Footer() {
         </div>
       </div>
       <div className="footer__middle">
-        <h3>Оставить заявку</h3>
+        <h3 className="footer__middle__text">Оставить заявку</h3>
         <input type="text" />
         <input type="text" />
         <input type="text" />
