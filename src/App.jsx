@@ -209,9 +209,8 @@ function About() {
       </p>
       
       <div className="about__cards">
-        <div className="about__card about__card__banner" style={
-          { backgroundImage: `url(${about_png})` }
-        }>
+        <div className="about__card about__card__banner">
+          <div className="about__card__banner--background"></div>
           <div className="about__card__shadowbox">
             <p className="about__card__shadowbox--desc">
               Принимая во внимание показатели успешности, перспективное
@@ -220,6 +219,11 @@ function About() {
             <button className="about__card__shadowbox--btn">Подробнее</button>
           </div>
         </div>
+
+
+
+
+
 
         <div className="about__card ">
           <img src={about_1} alt="" className="about__card__svg" />
