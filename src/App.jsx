@@ -327,7 +327,7 @@ function Main() {
       <Banner />
       <About />
       <HowWork />
-      <QNA />
+      {/* <QNA /> */}
     </main>
   );
 }
