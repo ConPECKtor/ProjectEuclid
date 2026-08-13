@@ -158,13 +158,10 @@ section {
   --primaryButton: #ff9900;
 }
 
-
 h3 {
   font-size: 48px;
   font-weight: 400;
 }
-
-
 
 /* Header */
 
@@ -271,9 +268,7 @@ h3 {
 
 /* BANNER */
 
-main {
-  /* display: none; */
-}
+
 
 .banner {
   display: flex;
@@ -337,20 +332,7 @@ main {
   color: #ffffff;
 }
 
-
-
-
-
-
-
-
-
-
-
 /* ABOUT  */
-
-
-
 
 .about__cards {
   display: grid;
@@ -367,63 +349,9 @@ main {
   max-width: 870px;
   padding: 65px 120px 65px 60px;
   gap: 50px;
-
   border: 1px solid #cacaca;
   border-radius: 32px;
 }
-
-
-
-
-.about__card__banner {
-  padding: 0;
-  position: relative;
-
-  grid-area: card1;
-  border-radius: 32px;
-}
-
-.about__card__banner--background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 32px;
-  background-image: url('/src/style/IMG/about.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-
-
-.about__card__shadowbox {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-  padding: 50px;
-  gap: 160px;
-  justify-content: space-between;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 32px;
-}
-
-.about__card__shadowbox--desc {
-  color: white;
-}
-
-.about__card__shadowbox--btn {
-  max-width: 175px;
-  max-height: 60px;
-  padding: 20px 38px;
-  color: white;
-  border: 1px solid #FF9900;
-  border-radius: 16px;
-}
-
-
-
 
 .about__card:nth-child(2) {
   grid-area: card2;
@@ -443,22 +371,55 @@ main {
   margin-bottom: 50px;
 }
 
+.about__card__banner {
+  position: relative;
+  grid-area: card1;
+  padding: 0;
+  border-radius: 32px;
+}
 
+.about__card__banner--background {
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+  background-image: url(../src/style/IMG/about.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 
+.about__card__shadowbox {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: 868px;
+  padding: 50px;
+  gap: 160px;
+  justify-content: space-between;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 32px;
+}
 
+.about__card__shadowbox--desc {
+  color: white;
+}
 
-
-
-
-
-
-
+.about__card__shadowbox--btn {
+  max-width: 175px;
+  max-height: 60px;
+  padding: 20px 38px;
+  color: white;
+  border: 1px solid #ff9900;
+  border-radius: 16px;
+}
 
 /* HowWork */
 
-/* .howwork {
+.howwork {
   display: none;
-} */
+}
 
 .howworkColumns {
   display: flex;
@@ -513,13 +474,10 @@ main {
   background-size: cover;
 }
 
-
-
 /* FOOTER */
 
-
 footer {
-  display: flex;
+  display: none;
   justify-content: space-between;
   align-items: center;
 
@@ -527,7 +485,6 @@ footer {
 
   background-color: black;
 }
-
 
 .footer__left {
   display: flex;
@@ -537,7 +494,7 @@ footer {
 }
 
 .footer__left--itemList {
-  color: #CACACA;
+  color: #cacaca;
   font-weight: 600;
   font-size: 18px;
 }
@@ -556,8 +513,6 @@ footer {
   color: white;
 }
 
-
-
 .footer__middle {
   display: flex;
   flex-direction: column;
@@ -566,12 +521,8 @@ footer {
 }
 
 .footer__middle__text {
-  color: #CACACA;
+  color: #cacaca;
 }
-
-
-
-
 
 .footer__right {
   display: flex;
@@ -579,14 +530,9 @@ footer {
 
   max-width: 363px;
   max-height: 320px;
-  color: #CACACA;
+  color: #cacaca;
   font-size: 16px;
 }
-
-
-
-
-
 
 @media (max-width: 1440px) {
   /* .container {
@@ -599,8 +545,6 @@ footer {
   }
 }
 
-
-
 @media (max-width: 1150px) {
   /* .container {
     max-width: 1300px;
@@ -611,12 +555,10 @@ footer {
     padding: 25px 20px;
   }
 
-
   .about__card__svg {
     max-width: 91px;
     max-height: 80px;
   }
-
 
   .about__card__text--title {
     max-width: 290px;
@@ -627,13 +569,7 @@ footer {
     max-width: 290px;
     font-size: 14px;
   }
-
-
 }
-
-
-
-
 
 @media (max-width: 1024px) {
   /* .container {
@@ -696,10 +632,6 @@ footer {
     margin-bottom: 60px;
   }
 
-
-
-
-
   .about__desc {
     width: 100%;
     margin-bottom: 60px;
@@ -723,17 +655,14 @@ footer {
     height: 295px;
   }
 
-
   .about__card__shadowbox {
     max-width: 100%;
   }
 
-
-
   .about__card__text--title {
     max-width: 452px;
     font-size: 24px;
-    margin-bottom: 8px
+    margin-bottom: 8px;
   }
 
   .about__card__text--desc {
@@ -778,9 +707,6 @@ footer {
     margin-bottom: 60px;
   }
 
-
-
-
   .about__desc {
     max-width: 668px;
     margin-bottom: 60px;
@@ -820,8 +746,6 @@ footer {
     max-height: 99px;
   }
 
-
-
   .about__card__text--title {
     max-width: 452px;
   }
@@ -830,26 +754,13 @@ footer {
     max-width: 450px;
     font-size: 16px;
   }
-
-
-
 }
-
-
-
-
 
 @media (max-width: 520px) {
   .banner {
     align-items: center;
   }
 }
-
-
-
-
-
-
 
 @media (max-width: 500px) {
   /* .container {
@@ -912,6 +823,8 @@ footer {
 
 
 
+  
+
   .about__desc {
     max-width: 668px;
     margin-bottom: 60px;
@@ -927,45 +840,65 @@ footer {
     gap: 32px;
   }
 
-  .about__card__banner {
-    height: 640px;
-  }
-
-  .about__card {
+   /* .about__card {
     flex-direction: column;
     align-items: start;
     padding: 0px;
-    /* max-height: 250px;
-    max-width: 290px; */
+    max-height: 250px;
+    max-width: 290px; 
     padding: 0px;
+    border: 0px;
+  } */
+
+  .about__card__shadowbox {
+    display: flex;
+    position: relative;
+    align-items: start;
+    flex-direction: column;
+    padding: 0;
+    gap: 12px;
+    background-color: rgba(0, 0, 0, 0);
+  } 
+
+
+  .about__card {
+    max-height: 200px;
+    max-width: 290px;
+    padding: 0;
     border: 0px;
   }
 
+
   .about__card__banner {
+    height: auto;
+    max-height: none;
+
+
     flex-direction: column;
+    max-height: 400px;
+    gap: 12px;
   }
-
-
 
   .about__card__banner--background {
-    background-size: contain;
-    max-height: 200px;
+    width: 100%;
+    max-height: 100%;
     max-width: 290px;
-    position: absolute;
-  }
 
+    flex-shrink: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 
   .about__card__shadowbox {
-      position: static;
+    position: static;
   }
-
 
   .about__card__svg {
     max-width: 64px;
     max-height: 49px;
   }
-
-
 
   .about__card__text--title {
     max-width: 290px;
@@ -976,7 +909,5 @@ footer {
     max-width: 290px;
     font-size: 14px;
   }
-
-
 
 }
