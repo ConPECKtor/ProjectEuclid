@@ -650,6 +650,12 @@ footer {
 
   .about__card__shadowbox {
     padding: 35px;
+    gap: 0;
+  }
+
+
+  .about__card__shadowbox--desc {
+    font-size: 14px;
   }
 
   .about__card__text--title {
@@ -661,6 +667,9 @@ footer {
     max-width: 290px;
     font-size: 14px;
   }
+
+
+
 }
 
 @media (max-width: 1024px) {
@@ -850,11 +859,11 @@ footer {
     max-height: 196px;
   }
 
-  .about__card__shadowbox--desc {
+  /* .about__card__shadowbox--desc {
     max-width: 366px;
     max-height: 128px;
     font-size: 13px;
-  }
+  } */
 
   .about__card {
     padding: 35px 46px 35px 40px;
@@ -1016,24 +1025,26 @@ footer {
 
 
   .about__card {
-    max-height: 200px;
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+    max-height: none;
     max-width: 290px;
     padding: 0;
     border: 0px;
   }
 
-  .about__card:nth-child(1) {
-    margin-bottom: 100px;
-  }
+  /* .about__card:nth-child(1) {
+    margin-bottom: 150px;
+  } */
 
 
   .about__card__banner {
-    height: auto;
-    height: 200px;
-
-
     flex-direction: column;
+    height: auto;
+    max-height: none;
     gap: 12px;
+    margin-bottom: 32px;
   }
 
   .about__card__banner--background {
