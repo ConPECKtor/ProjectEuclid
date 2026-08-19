@@ -313,10 +313,53 @@ let qnaTitles = [
   "Могу ли я вернуть деньги на каком-либо из этапов работ?",
 ];
 
+let qnaDescs = [
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam aliquam alias laboriosam praesentium quos obcaecati officia aspernatur soluta similique, dolor voluptatibus, debitis adipisci quidem minus illum. Ex, aliquam architecto?",
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi necessitatibus fugiat sit magni quae sequi ipsam magnam accusantium culpa, voluptatibus expedita. Perspiciatis beatae et doloribus nisi, non molestias debitis reiciendis!",
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam aperiam aliquam alias laboriosam praesentium quos obcaecati officia aspernatur soluta similique, dolor voluptatibus, debitis adipisci quidem minus illum. Ex, aliquam architecto?",
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi necessitatibus fugiat sit magni quae sequi ipsam magnam accusantium culpa, voluptatibus expedita. Perspiciatis beatae et doloribus nisi, non molestias debitis reiciendis!",
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi necessitatibus fugiat sit magni quae sequi ipsam magnam accusantium culpa, voluptatibus expedita. Perspiciatis beatae et doloribus nisi, non molestias debitis reiciendis!",
+];
+
+function Question({ index, title, desc }) {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <li className={`qna__listItem `}>
+      <div className="qna__listItem__card">
+        <p className="qna__listItem__cardTitle">{title}</p>
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          className="qna__listItem__cardBTN"
+        >
+          X
+        </button>
+      </div>
+      <p
+        className={`qna__listItem__cardDesc ${
+          isOpen ? "qna__listItem__cardDesc--active" : ""
+        } `}
+      >
+        {desc}
+      </p>
+    </li>
+  );
+}
+
 function QNA() {
   return (
     <section className="qna">
-      <h3>Часто задаваемые вопросы</h3>
+      <h3 className="qna__title">Часто задаваемые вопросы</h3>
+      <ul className="qna__list">
+        {qnaTitles.map((_, index) => (
+          <Question
+            index={index}
+            title={qnaTitles[index]}
+            desc={qnaDescs[index]}
+          />
+        ))}
+      </ul>
     </section>
   );
 }
@@ -358,10 +401,10 @@ function Footer() {
       </div>
       <div className="footer__middle">
         <h3 className="footer__middle__text">Оставить заявку</h3>
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
-        <button>Отправить данные</button>
+        <input type="text" className="footer__middle__input" name="FullName" />
+        <input type="email" className="footer__middle__input" name="Email" />
+        <input type="text" className="footer__middle__input" />
+        <button className="footer__middle__button btn">Отправить данные</button>
       </div>
       <p className="footer__right">
         Высокий уровень вовлечения представителей целевой аудитории является
@@ -389,8 +432,8 @@ function Euclid() {
       />
       <div className="container">
         <Main />
-        <Footer />
       </div>
+      <Footer />
     </>
   );
 }
