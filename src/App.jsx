@@ -275,25 +275,26 @@ function HowWork() {
     <section className="howwork">
       <h3 className="howwork__title">Как мы работаем</h3>
 
-      <div className="howworkColumns">
-        <div className="howwork__main">
-          <ul className="howwork__mainSteps">
-            {stepIMG.map((_, index) => (
-              <Step
-                key={index}
-                index={index}
-                active={activeStep === index}
-                onClick={() => setActiveStep(index)}
-              />
-            ))}
-          </ul>
+      <div className="howwork__main">
+        <ul className="howwork__main__steps">
+          {stepIMG.map((_, index) => (
+            <Step
+              key={index}
+              index={index}
+              active={activeStep === index}
+              onClick={() => setActiveStep(index)}
+            />
+          ))}
+        </ul>
+        <div className="howwork__info">
+          <p className="howwork__info__title">{stepTitles[activeStep]}</p>
 
-          <p className="howwork__mainTitle">{stepTitles[activeStep]}</p>
+          <p className="howwork__info__desc">{stepDesc[activeStep]}</p>
 
-          <p className="howwork__mainDesc">{stepDesc[activeStep]}</p>
-
-          <button className="howwork__buttonMore">Подробнее</button>
-          <button className="howwork__buttonDeal">Договор</button>
+          <div className="howwork__info__buttons">
+            <button className="howwork__mainButton--more">Подробнее</button>
+            <button className="howwork__mainButton--deal">Договор</button>
+          </div>
         </div>
 
         <div
@@ -377,7 +378,7 @@ function Main() {
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <div className="footer__left">
         <div className="footer__left--logoBox">
           <LogoIcon className={"footer__left--logoIcon"} />
