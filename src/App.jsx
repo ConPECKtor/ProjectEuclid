@@ -292,8 +292,10 @@ function HowWork() {
 
           <p className="howwork__mainDesc">{stepDesc[activeStep]}</p>
 
-          <button className="howwork__buttonMore">Подробнее</button>
-          <button className="howwork__buttonDeal">Договор</button>
+          <div className="howwork__mainButtons">
+            <button className="howwork__mainButton--more">Подробнее</button>
+            <button className="howwork__mainButton--deal">Договор</button>
+          </div>
         </div>
 
         <div
