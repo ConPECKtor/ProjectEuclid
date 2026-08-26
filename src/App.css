@@ -86,6 +86,7 @@ h6,
 p,
 ul {
   margin: 0;
+  pad: 0;
 }
 
 body {
@@ -386,7 +387,7 @@ h3 {
 
 .about__card__shadowbox--desc {
   color: white;
-  width: 49%;
+  /* width: 49%; */
   font-size: 16px;
 }
 
@@ -401,73 +402,109 @@ h3 {
 
 /* HowWork */
 
-.howworkColumns {
+
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "card1 card2"
+    "card1 card3";
+  gap: 32px; */
+
+.howwork__main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 30px 460px; 
+  /* По дефолту 460, но здесь важно прижать кнопки шагов к описанию и заголовку пониже */
+  
+  grid-template-areas: 
+  "one three"
+  "two three";
+  gap: 10px;
+}
+
+
+.howwork__main__steps {
   display: flex;
-  align-items: start;
-  gap: 142px;
+  gap: 85px;
 }
 
 .howwork__title {
   margin-bottom: 50px;
 }
 
-.howwork__main {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  max-width: 758px;
-}
-
-.howwork__mainSteps {
-  display: flex;
-  gap: 85px;
-  margin-bottom: 45px;
-}
-
-.howwork__mainTitle {
-  margin-bottom: 8px;
-  font-size: 24px;
-  font-weight: 700;
+.howwork__mainStep {
+  font-size: 18px;
 }
 
 .howwork__mainStep--active {
   color: #E1670E;
 }
 
-
-
-.howwork__mainDesc {
-  max-width: 758px;
-  font-size: 16px;
+.howwork__main__infoTitle {
+  font-weight: 700;
+  font-size: 24px;
+  margin-bottom: 8px;
 }
 
-.howwork__mainButton--more {
+.howwork__main__infoDesc {
+  max-width: 758px;
+  max-height: 352px;
+  margin-bottom: 18px;
+  font-size: 20px;
+}
+
+
+.howwork__main__infoButtons--more {
   margin-right: 32px;
   padding: 20px 38px;
   color: #fff;
   background-color: #ff9900;
   border-radius: 16px;
+  font-weight: 700;
 }
 
-.howwork__mainButton--deal {
+.howwork__main__infoButtons--deal {
   padding: 20px 38px;
   border: 1px solid #000000;
   border-radius: 16px;
+  font-weight: 400;
   
 }
 
-.howwork__photo {
-  width: 870px;
-  height: 460px;
 
-  transition: background-image 0.4s ease-in-out;
+
+
+.howwork__main__steps {
+  grid-area: one;
+  align-self: end;
+}
+
+.howwork__main__info {
+  grid-area: two;
+  align-self: center;
+}
+
+.howwork__main__photo {
+  grid-area: three;
+  max-width: 870px;
+  max-height: 460px;
+  border-radius: 32px;
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   transition: background-image 0.4s ease-in-out;
 }
 
+
+
+
+
 /* QNA */
+
+.qna {
+  display: none;
+}
 
 .qna__listItem__card {
   display: flex;
@@ -494,6 +531,10 @@ footer {
   padding: 50px 75px;
 
   background-color: black;
+}
+
+.footer {
+  display: none;
 }
 
 .footer__left {
@@ -588,7 +629,9 @@ footer {
   }
 
   .about__card__shadowbox {
-    max-height: 45%;
+    max-height: 40%;
+    gap: 10%;
+    padding: 35px;
   }
 
   footer {
@@ -616,7 +659,7 @@ footer {
   }
 
   .about__card__shadowbox {
-    padding: 35px;
+    gap: 15%;
   }
 
   .about__card__shadowbox--desc {
@@ -736,7 +779,14 @@ footer {
 
 
 
+  .howwork__main {
+    gap: 50px;
+  }
 
+  .howwork__main__photo {
+    max-width: 437px;
+    max-height: 689px;
+  }
 
 
 
@@ -851,6 +901,93 @@ footer {
     font-size: 16px;
   }
 
+
+
+
+
+  .howwork__main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 284px 477px;
+    grid-template-areas: 
+    "one"
+    "three"
+    "two";
+    gap: 50px;
+  }
+  
+  
+  .howwork__main__steps {
+    display: flex;
+    gap: 20%;
+  }
+  
+  .howwork__title {
+    margin-bottom: 20px;
+  }
+  
+  .howwork__mainStep {
+    font-size: 18px;
+  }
+  
+  .howwork__mainStep--active {
+    color: #E1670E;
+  }
+  
+  .howwork__main__infoTitle {
+    font-weight: 700;
+    font-size: 24px;
+    margin-bottom: 8px;
+  }
+  
+  .howwork__main__infoDesc {
+    max-width: auto;
+    max-height: auto;
+    margin-bottom: 25px;
+    font-size: 16px;
+  }
+  
+  
+  .howwork__main__infoButtons--more {
+    margin-right: 32px;
+    padding: 20px 38px;
+    color: #fff;
+    background-color: #ff9900;
+    border-radius: 16px;
+    font-weight: 700;
+  }
+  
+  .howwork__main__infoButtons--deal {
+    padding: 20px 38px;
+    border: 1px solid #000000;
+    border-radius: 16px;
+    font-weight: 400;
+    
+  }
+  
+  
+  
+  
+  .howwork__main__steps {
+    grid-area: one;
+    align-self: end;
+  }
+  
+  .howwork__main__info {
+    grid-area: two;
+    align-self: start;
+  }
+  
+  .howwork__main__photo {
+    grid-area: three;
+    max-width: 870px;
+    max-height: 460px;
+  }
+
+
+
+
+
   footer {
     display: flex;
     flex-direction: column-reverse;
@@ -867,6 +1004,11 @@ footer {
     height: 60px;
   }
 }
+
+
+
+
+
 
 @media (max-width: 600px) {
   .banner {
@@ -977,6 +1119,9 @@ footer {
   }
 
 
+
+
+
   .about__card__banner--background {
     height: 200px;
     width: 100%;
@@ -1000,6 +1145,8 @@ footer {
   .about__card__shadowbox--desc {
     color: #000000;
     width: 100%;
+    max-width: none;
+    text-align: start;
   }
 
   .about__card__shadowbox--btn {
@@ -1014,7 +1161,7 @@ footer {
     align-items: start;
     height: auto;
     max-height: none;
-    max-width: 290px;
+    /* max-width: 290px; */
     gap: 12px;
     padding: 0;
     border: 0px;
@@ -1029,9 +1176,10 @@ footer {
   }
 
   .about__card__banner--background {
-    width: 100%;
-    max-height: 100%;
-    max-width: 290px;
+    /* width: 100%;
+    max-height: 100%; */
+    /* max-width: 290px; */
+
 
     flex-shrink: 0;
 
@@ -1050,14 +1198,21 @@ footer {
   }
 
   .about__card__text--title {
-    max-width: 290px;
+    max-width: none;
+    text-align: start;
     font-size: 18px;
   }
 
   .about__card__text--desc {
-    max-width: 290px;
+    max-width: none;
+    text-align: start;
     font-size: 14px;
   }
+
+
+
+
+
 
   footer {
     align-items: center;

@@ -275,31 +275,29 @@ function HowWork() {
     <section className="howwork">
       <h3 className="howwork__title">Как мы работаем</h3>
 
-      <div className="howworkColumns">
-        <div className="howwork__main">
-          <ul className="howwork__mainSteps">
-            {stepIMG.map((_, index) => (
-              <Step
-                key={index}
-                index={index}
-                active={activeStep === index}
-                onClick={() => setActiveStep(index)}
-              />
-            ))}
-          </ul>
+      <div className="howwork__main">
+        <ul className="howwork__main__steps">
+          {stepIMG.map((_, index) => (
+            <Step
+              key={index}
+              index={index}
+              active={activeStep === index}
+              onClick={() => setActiveStep(index)}
+            />
+          ))}
+        </ul>
 
-          <p className="howwork__mainTitle">{stepTitles[activeStep]}</p>
-
-          <p className="howwork__mainDesc">{stepDesc[activeStep]}</p>
-
-          <div className="howwork__mainButtons">
-            <button className="howwork__mainButton--more">Подробнее</button>
-            <button className="howwork__mainButton--deal">Договор</button>
+        <div className="howwork__main__info">
+          <p className="howwork__main__infoTitle">{stepTitles[activeStep]}</p>
+          <p className="howwork__main__infoDesc">{stepDesc[activeStep]}</p>
+          <div className="howwork__main__infoButtons">
+            <button className="howwork__main__infoButtons--more">Подробнее</button>
+            <button className="howwork__main__infoButtons--deal">Договор</button>
           </div>
         </div>
 
         <div
-          className="howwork__photo"
+          className="howwork__main__photo"
           style={{ backgroundImage: `url(${currentStep})` }}
         ></div>
       </div>
@@ -379,7 +377,7 @@ function Main() {
 
 function Footer() {
   return (
-    <footer>
+    <footer className="footer">
       <div className="footer__left">
         <div className="footer__left--logoBox">
           <LogoIcon className={"footer__left--logoIcon"} />
