@@ -86,7 +86,7 @@ h6,
 p,
 ul {
   margin: 0;
-  pad: 0;
+  padding: 0;
 }
 
 body {
@@ -413,7 +413,7 @@ h3 {
 .howwork__main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 30px 460px; 
+  /* grid-template-rows: 30px 460px;  */
   /* По дефолту 460, но здесь важно прижать кнопки шагов к описанию и заголовку пониже */
   
   grid-template-areas: 
@@ -425,7 +425,7 @@ h3 {
 
 .howwork__main__steps {
   display: flex;
-  gap: 85px;
+  justify-content: space-between;
 }
 
 .howwork__title {
@@ -448,9 +448,8 @@ h3 {
 
 .howwork__main__infoDesc {
   max-width: 758px;
-  max-height: 352px;
   margin-bottom: 18px;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 
@@ -475,25 +474,23 @@ h3 {
 
 
 .howwork__main__steps {
+  max-width: 447px;
   grid-area: one;
-  align-self: end;
 }
 
 .howwork__main__info {
   grid-area: two;
-  align-self: center;
 }
 
 .howwork__main__photo {
   grid-area: three;
   max-width: 870px;
-  max-height: 460px;
   border-radius: 32px;
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  transition: background-image 0.4s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
 }
 
 
@@ -502,8 +499,8 @@ h3 {
 
 /* QNA */
 
-.qna {
-  display: none;
+.qna__title {
+  margin-bottom: 32px;
 }
 
 .qna__listItem__card {
@@ -919,7 +916,7 @@ footer {
   
   .howwork__main__steps {
     display: flex;
-    gap: 20%;
+    max-width: 100%;
   }
   
   .howwork__title {
