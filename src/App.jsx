@@ -286,19 +286,22 @@ function HowWork() {
             />
           ))}
         </ul>
-        <div className="howwork__info">
-          <p className="howwork__info__title">{stepTitles[activeStep]}</p>
 
-          <p className="howwork__info__desc">{stepDesc[activeStep]}</p>
-
-          <div className="howwork__info__buttons">
-            <button className="howwork__mainButton--more">Подробнее</button>
-            <button className="howwork__mainButton--deal">Договор</button>
+        <div className="howwork__main__info">
+          <p className="howwork__main__infoTitle">{stepTitles[activeStep]}</p>
+          <p className="howwork__main__infoDesc">{stepDesc[activeStep]}</p>
+          <div className="howwork__main__infoButtons">
+            <button className="howwork__main__infoButtons--more">
+              Подробнее
+            </button>
+            <button className="howwork__main__infoButtons--deal">
+              Договор
+            </button>
           </div>
         </div>
 
         <div
-          className="howwork__photo"
+          className="howwork__main__photo"
           style={{ backgroundImage: `url(${currentStep})` }}
         ></div>
       </div>
@@ -334,7 +337,7 @@ function Question({ index, title, desc }) {
           onClick={() => setIsOpen(!isOpen)}
           className="qna__listItem__cardBTN"
         >
-          X
+          +
         </button>
       </div>
       <p
@@ -371,7 +374,7 @@ function Main() {
       <Banner />
       <About />
       <HowWork />
-      {/* <QNA /> */}
+      <QNA />
     </main>
   );
 }
