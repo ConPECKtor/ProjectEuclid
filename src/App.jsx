@@ -20,7 +20,6 @@ import about_png from "./style/IMG/about.png";
 import main1 from "./style/IMG/main_1.png";
 import main2 from "./style/IMG/main_2.png";
 import main3 from "./style/IMG/main_3.png";
-import main4 from "./style/IMG/main_1.png";
 
 import how1 from "./style/IMG/how_1.jpg";
 import how2 from "./style/IMG/how_2.jpg";
@@ -297,8 +296,12 @@ function HowWork() {
           <p className="howwork__main__infoTitle">{stepTitles[activeStep]}</p>
           <p className="howwork__main__infoDesc">{stepDesc[activeStep]}</p>
           <div className="howwork__main__infoButtons">
-            <button className="howwork__main__infoButtons--more">Подробнее</button>
-            <button className="howwork__main__infoButtons--deal">Договор</button>
+            <button className="howwork__main__infoButtons--more">
+              Подробнее
+            </button>
+            <button className="howwork__main__infoButtons--deal">
+              Договор
+            </button>
           </div>
         </div>
 
@@ -339,7 +342,7 @@ function Question({ index, title, desc }) {
           onClick={() => setIsOpen(!isOpen)}
           className="qna__listItem__cardBTN"
         >
-          X
+          +
         </button>
       </div>
       <p

@@ -306,14 +306,6 @@ h3 {
   color: #ffffff;
 }
 
-
-
-
-
-
-
-
-
 /* ABOUT  */
 
 .about__title {
@@ -402,8 +394,7 @@ h3 {
 
 /* HowWork */
 
-
-  /* display: grid;
+/* display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas:
     "card1 card2"
@@ -415,13 +406,12 @@ h3 {
   grid-template-columns: 1fr 1fr;
   /* grid-template-rows: 30px 460px;  */
   /* По дефолту 460, но здесь важно прижать кнопки шагов к описанию и заголовку пониже */
-  
-  grid-template-areas: 
-  "one three"
-  "two three";
+
+  grid-template-areas:
+    "one three"
+    "two three";
   gap: 10px;
 }
-
 
 .howwork__main__steps {
   display: flex;
@@ -436,8 +426,8 @@ h3 {
   font-size: 18px;
 }
 
-.howwork__mainStep--active {
-  color: #E1670E;
+.howwork__main__info {
+  grid-area: two;
 }
 
 .howwork__main__infoTitle {
@@ -448,10 +438,16 @@ h3 {
 
 .howwork__main__infoDesc {
   max-width: 758px;
+  /* max-height: 352px; */
   margin-bottom: 18px;
   font-size: 16px;
 }
 
+.howwork__main__infoButtons {
+  display: flex;
+  justify-content: space-around;
+  max-width: 354px;
+}
 
 .howwork__main__infoButtons--more {
   margin-right: 32px;
@@ -467,11 +463,7 @@ h3 {
   border: 1px solid #000000;
   border-radius: 16px;
   font-weight: 400;
-  
 }
-
-
-
 
 .howwork__main__steps {
   max-width: 447px;
@@ -493,11 +485,10 @@ h3 {
   transition: background-image 0.2s ease-in-out;
 }
 
-
-
-
-
 /* QNA */
+
+.qna {
+}
 
 .qna__title {
   margin-bottom: 32px;
@@ -506,7 +497,6 @@ h3 {
 .qna__listItem__card {
   display: flex;
   padding: 39px 0;
-
   justify-content: space-between;
   border-top: 3px solid #cacaca;
 }
@@ -774,8 +764,6 @@ footer {
     font-size: 16px;
   }
 
-
-
   .howwork__main {
     gap: 50px;
   }
@@ -784,9 +772,6 @@ footer {
     max-width: 437px;
     max-height: 689px;
   }
-
-
-
 
   .footer__middle {
     display: flex;
@@ -843,11 +828,6 @@ footer {
     color: #fff;
   }
 
-
-
-
-
-  
   .about__desc {
     max-width: 668px;
     margin-bottom: 60px;
@@ -898,54 +878,51 @@ footer {
     font-size: 16px;
   }
 
-
-
-
-
   .howwork__main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 284px 477px;
-    grid-template-areas: 
-    "one"
-    "three"
-    "two";
+    grid-template-rows: 50px 284px 372px;
+    grid-template-areas:
+      "one"
+      "three"
+      "two";
     gap: 50px;
   }
-  
-  
+
   .howwork__main__steps {
     display: flex;
     max-width: 100%;
   }
-  
+
   .howwork__title {
     margin-bottom: 20px;
   }
-  
+
   .howwork__mainStep {
     font-size: 18px;
   }
-  
+
   .howwork__mainStep--active {
-    color: #E1670E;
+    color: #e1670e;
   }
-  
+
   .howwork__main__infoTitle {
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 8px;
   }
-  
+
   .howwork__main__infoDesc {
     max-width: auto;
     max-height: auto;
     margin-bottom: 25px;
-    font-size: 16px;
+    font-size: 18px;
   }
-  
-  
+
+
   .howwork__main__infoButtons--more {
+    width: 176px;
+    height: 60px;
     margin-right: 32px;
     padding: 20px 38px;
     color: #fff;
@@ -953,37 +930,33 @@ footer {
     border-radius: 16px;
     font-weight: 700;
   }
-  
+
   .howwork__main__infoButtons--deal {
+    width: 176px;
+    height: 60px;
     padding: 20px 38px;
     border: 1px solid #000000;
     border-radius: 16px;
     font-weight: 400;
-    
   }
-  
-  
-  
-  
+
+
+
   .howwork__main__steps {
     grid-area: one;
     align-self: end;
   }
-  
+
   .howwork__main__info {
     grid-area: two;
     align-self: start;
   }
-  
+
   .howwork__main__photo {
     grid-area: three;
     max-width: 870px;
     max-height: 460px;
   }
-
-
-
-
 
   footer {
     display: flex;
@@ -1002,11 +975,6 @@ footer {
   }
 }
 
-
-
-
-
-
 @media (max-width: 600px) {
   .banner {
     align-items: center;
@@ -1017,10 +985,6 @@ footer {
     margin-bottom: 60px;
   }
 
-  .about__card {
-    /* gap: 19%; */
-  }
-
   .about__card__banner {
     flex-direction: column;
     /* height: auto; */
@@ -1029,10 +993,7 @@ footer {
 
   /* Авто высота руинит всё, полностью убирая фотку с 600 до 500 */
 
-
-
   .about__card__shadowbox {
-    
     height: auto;
     /* flex-direction: column; */
     /* justify-content: start; */
@@ -1115,10 +1076,6 @@ footer {
     margin-bottom: 60px;
   }
 
-
-
-
-
   .about__card__banner--background {
     height: 200px;
     width: 100%;
@@ -1127,7 +1084,6 @@ footer {
   }
 
   /* ВОТ ЭТА ШТУКА ВСЁ РУИНИЛА ВСЁ ЭТО ВРЕМЯ, ОНА ДОЛЖНА БЫТЬ В МЕДИА 600 А НЕ РАНЬШЕ */
-
 
   .about__card__shadowbox {
     display: flex;
@@ -1167,9 +1123,7 @@ footer {
   .about__card__banner {
     flex-direction: column;
     height: auto;
-    max-height: none;
     gap: 12px;
-    /* margin-bottom: 32px; */
   }
 
   .about__card__banner--background {
@@ -1177,9 +1131,7 @@ footer {
     max-height: 100%; */
     /* max-width: 290px; */
 
-
     flex-shrink: 0;
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1205,11 +1157,6 @@ footer {
     text-align: start;
     font-size: 14px;
   }
-
-
-
-
-
 
   footer {
     align-items: center;
