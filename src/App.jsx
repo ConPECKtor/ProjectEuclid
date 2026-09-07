@@ -291,7 +291,6 @@ function HowWork() {
             />
           ))}
         </ul>
-
         <div className="howwork__main__info">
           <p className="howwork__main__infoTitle">{stepTitles[activeStep]}</p>
           <p className="howwork__main__infoDesc">{stepDesc[activeStep]}</p>
