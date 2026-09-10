@@ -147,6 +147,7 @@ h3 {
   margin: 0 auto;
 }
 
+
 /* Header */
 
 .header {
@@ -437,20 +438,30 @@ h3 {
 }
 
 .howwork__main__infoDesc {
+  display: grid;
   max-width: 758px;
-  /* max-height: 352px; */
   margin-bottom: 18px;
+}
+
+.howwork__main__infoDescItem {
+  grid-area: 1 / 1;
+  visibility: hidden;
   font-size: 16px;
+  white-space: pre-line;
+}
+
+.howwork__main__infoDescItem--active {
+  visibility: visible;
 }
 
 .howwork__main__infoButtons {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   max-width: 354px;
+  gap: 32px;
 }
 
 .howwork__main__infoButtons--more {
-  margin-right: 32px;
   padding: 20px 38px;
   color: #fff;
   background-color: #ff9900;
@@ -495,33 +506,73 @@ h3 {
 }
 
 .qna__listItem__card {
+  
   display: flex;
+
+  z-index: 1;
   padding: 39px 0;
   justify-content: space-between;
-  border-top: 3px solid #cacaca;
+  border-top: 1px solid #cacaca;
+}
+
+.qna__listItem:last-child {
+  border-bottom: 1px solid #cacaca;
+}
+
+.qna__listItem__cardTitle {
+  font-size: 24px;
+  font-weight: 700;
+  z-index: 2;
 }
 
 .qna__listItem__cardDesc {
-  display: none;
+  position: absolute;
+  top: -100px;
+  z-index: -1;
+
+  transition: top 0.3s ease-in-out;
 }
 
+
+
 .qna__listItem__cardDesc--active {
+  position: relative;
+  top: 0;
+  z-index: 2;
+
+  transition: top 0.3s ease-in-out;
+}
+
+.qna__listItem__cardBtnDiv {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.qna__listItem__cardBtnDiv--X {
+  position: absolute;
+  transition: transform 0.3s ease-in-out;
+}
+
+.qna__listItem__cardBtnDiv--X--active {
+  transform: rotate(45deg);
+  transition: transform 0.3s ease-in-out;
 }
 
 /* FOOTER */
 
 footer {
-  display: none;
-  align-items: center;
-
-  padding: 50px 75px;
 
   background-color: black;
 }
 
-.footer {
-  display: none;
+.container__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 50px 75px;
 }
 
 .footer__left {
@@ -621,7 +672,7 @@ footer {
     padding: 35px;
   }
 
-  footer {
+  .container__footer {
     justify-content: space-around;
     align-items: center;
   }
@@ -773,6 +824,16 @@ footer {
     max-height: 689px;
   }
 
+  .howwork__main__infoTitle {
+    font-size: 37px; /* Вынужден из-за прыгающего текста, вина 1 и 2 строчного тайтла */
+  }
+
+
+  .qna__listItem__cardTitle {
+    font-size: 20px;
+  }
+    
+
   .footer__middle {
     display: flex;
     flex-direction: column;
@@ -881,7 +942,7 @@ footer {
   .howwork__main {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 284px 372px;
+    grid-template-rows: 50px 284px auto;
     grid-template-areas:
       "one"
       "three"
@@ -910,20 +971,20 @@ footer {
     font-weight: 700;
     font-size: 24px;
     margin-bottom: 8px;
+    
   }
 
   .howwork__main__infoDesc {
-    max-width: auto;
-    max-height: auto;
     margin-bottom: 25px;
+  }
+
+  .howwork__main__infoDescItem {
     font-size: 18px;
   }
 
-
   .howwork__main__infoButtons--more {
-    width: 176px;
-    height: 60px;
-    margin-right: 32px;
+    /* width: 176px;
+    height: 60px; */
     padding: 20px 38px;
     color: #fff;
     background-color: #ff9900;
@@ -932,15 +993,13 @@ footer {
   }
 
   .howwork__main__infoButtons--deal {
-    width: 176px;
-    height: 60px;
+    /* width: 176px;
+    height: 60px; */
     padding: 20px 38px;
     border: 1px solid #000000;
     border-radius: 16px;
     font-weight: 400;
   }
-
-
 
   .howwork__main__steps {
     grid-area: one;
@@ -958,11 +1017,36 @@ footer {
     max-height: 460px;
   }
 
-  footer {
+  .howwork__main__infoButtons {
+    justify-content: start;
+    gap: 32px;
+  }
+
+  .howwork__main__infoButtons--more {
+    width: 175px;
+    height: 60px;
+  }
+
+  .howwork__main__infoButtons--deal {
+    width: 147px;
+    height: 60px;
+  }
+
+
+  
+  .container__footer {
     display: flex;
     flex-direction: column-reverse;
-    align-items: start;
+    align-items: center;
     gap: 50px;
+
+    padding: 50px 0px
+  }
+
+  .footer__left {
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
   }
 
   .footer__left--list {
@@ -978,6 +1062,19 @@ footer {
 @media (max-width: 600px) {
   .banner {
     align-items: center;
+  }
+
+  .banner__title {
+    text-align: center;
+  }
+
+  .banner__desc { 
+    text-align: center;
+  }
+
+  .circleBTN {
+    width: 10px;
+    height: 10px;
   }
 
   .about__desc {
@@ -1019,6 +1116,41 @@ footer {
     max-width: 290px;
     /* font-size: 14px; */
   }
+
+
+  .howwork__main__infoButtons {
+    justify-content: start;
+    gap: 32px;
+  }
+
+  .howwork__main__infoButtons--more {
+    width: 162px;
+    height: 39px;
+    padding: 12px 44px;
+  }
+
+  .howwork__main__infoButtons--deal {
+    width: 118px;
+    height: 39px;
+    padding: 12px 32px;
+  }
+
+
+  .qna__listItem__cardTitle {
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .qna__listItem__cardBtnDiv--circle {
+    width: 30px;
+    height: 30px;
+  }
+
+  .qna__listItem__cardBtnDiv--X {
+    width: 18px;
+    height: 18px;
+  }
+
 }
 
 @media (max-width: 500px) {
@@ -1158,14 +1290,45 @@ footer {
     font-size: 14px;
   }
 
-  footer {
+  .howwork__main__infoButtons {
+    gap: 10px;
+  }
+
+  .howwork__main__infoTitle {
+    font-size: 42px;
+  }
+
+  .container__footer {
     align-items: center;
   }
 
   .footer__left {
+    flex-direction: column;
     align-items: center;
-    width: 100%;
+    /* width: 100%; */
     padding: 16px;
     border-top: 3px solid #414141;
   }
 }
+
+
+@media (max-width: 480px) {
+  .howwork__main__steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0; 
+  }
+
+  .howwork__mainStep--item,
+  .howwork__mainStep {
+    min-width: 0;
+  }
+
+  .howwork__mainStep {
+    width: 100%;
+    padding-inline: 6px; /* подбери под свой дизайн */
+    white-space: nowrap;
+  }
+}
+
+

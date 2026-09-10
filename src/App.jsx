@@ -31,6 +31,8 @@ import vk from "./style/SVG/vk.svg";
 
 import { Step } from "./step.jsx";
 
+import { MoreButton } from "./moreButton.jsx";
+
 const bannerIMG = [main1, main2, main3];
 
 function Banner() {
@@ -257,13 +259,11 @@ let stepTitles = [
   "Инспектируем все этапы работ",
 ];
 let stepDesc = [
-  "Влечёт за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. \u00A0\u00A0\u00A0 А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований. Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.",
+  "Влечёт за собой процесс внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями.\nА также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований. Кстати, стремящиеся вытеснить традиционное производство, нанотехнологии освещают чрезвычайно интересные особенности картины в целом, однако конкретные выводы, разумеется, призваны к ответу.",
   "Внедрения и модернизации приоритизации разума над эмоциями. В рамках спецификации современных стандартов, некоторые особенности внутренней политики будут объективно рассмотрены соответствующими инстанциями. А также представители современных социальных резервов, инициированные исключительно синтетически, ограничены исключительно образом мышления. Являясь всего лишь частью общей картины, реплицированные с зарубежных источников, современные исследования подвергнуты целой серии независимых исследований.",
   "Идейные соображения высшего порядка, а также новая модель организационной деятельности требует анализа прогресса профессионального сообщества. Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет выполнить важные задания по разработке прогресса профессионального сообщества.",
   "Высокий уровень вовлечения представителей целевой аудитории является чётким доказательством простого факта: высококачественный прототип будущего проекта напрямую зависит от дальнейших направлений развития. Разнообразный и богатый опыт говорит нам, что новая модель организационной деятельности говорит о возможностях системы массового участия. Принимая во внимание показатели успешности, постоянное информационно-пропагандистское обеспечение нашей деятельности позволяет.",
 ];
-
-
 
 let stepIMG = [how1, how2, how3, how4];
 
@@ -271,10 +271,6 @@ function HowWork() {
   let [activeStep, setActiveStep] = useState(0);
 
   let currentStep = stepIMG[activeStep];
-
-  const longestDesc = stepDesc.reduce((longest, current) => {
-    return String(current).length > String(longest).length ? current : longest;
-  }, 0);
 
   return (
     <section className="howwork">
@@ -293,7 +289,21 @@ function HowWork() {
         </ul>
         <div className="howwork__main__info">
           <p className="howwork__main__infoTitle">{stepTitles[activeStep]}</p>
-          <p className="howwork__main__infoDesc">{stepDesc[activeStep]}</p>
+          <div className="howwork__main__infoDesc">
+            {stepDesc.map((desc, index) => (
+              <p
+                key={index}
+                className={`howwork__main__infoDescItem ${
+                  activeStep === index
+                    ? "howwork__main__infoDescItem--active"
+                    : ""
+                }`}
+                aria-hidden={activeStep !== index}
+              >
+                {desc}
+              </p>
+            ))}
+          </div>
           <div className="howwork__main__infoButtons">
             <button className="howwork__main__infoButtons--more">
               Подробнее
@@ -336,13 +346,7 @@ function Question({ index, title, desc }) {
     <li className={`qna__listItem `}>
       <div className="qna__listItem__card">
         <p className="qna__listItem__cardTitle">{title}</p>
-        <button
-          type="button"
-          onClick={() => setIsOpen(!isOpen)}
-          className="qna__listItem__cardBTN"
-        >
-          +
-        </button>
+        <MoreButton setIsOpen={setIsOpen} isOpen={isOpen} />
       </div>
       <p
         className={`qna__listItem__cardDesc ${
@@ -386,42 +390,56 @@ function Main() {
 function Footer() {
   return (
     <footer className="footer">
-      <div className="footer__left">
-        <div className="footer__left--logoBox">
-          <LogoIcon className={"footer__left--logoIcon"} />
-          <Logotext className={"footer__left--logoText"} />
-        </div>
+      <div className="container">
+        <div className="container__footer">
+          <div className="footer__left">
+            <div className="footer__left--logoBox">
+              <LogoIcon className={"footer__left--logoIcon"} />
+              <Logotext className={"footer__left--logoText"} />
+            </div>
 
-        <ul className="footer__left--list">
-          <li className="footer__left--itemList">О нас</li>
-          <li className="footer__left--itemList">Проекты</li>
-          <li className="footer__left--itemList">Отзывы</li>
-          <li className="footer__left--itemList">Договор оферты</li>
-          <li className="footer__left--itemList">Договор подряда</li>
-          <li className="footer__left--itemList">Конфиденциальность</li>
-          <li className="footer__left--itemList">Партнёрское соглашение</li>
-        </ul>
+            <ul className="footer__left--list">
+              <li className="footer__left--itemList">О нас</li>
+              <li className="footer__left--itemList">Проекты</li>
+              <li className="footer__left--itemList">Отзывы</li>
+              <li className="footer__left--itemList">Договор оферты</li>
+              <li className="footer__left--itemList">Договор подряда</li>
+              <li className="footer__left--itemList">Конфиденциальность</li>
+              <li className="footer__left--itemList">Партнёрское соглашение</li>
+            </ul>
 
-        <div className="footer__left--socials">
-          <img src={ok} alt="Лого" className="" />
-          <img src={vk} alt="Лого" className="" />
+            <div className="footer__left--socials">
+              <img src={ok} alt="Лого" className="" />
+              <img src={vk} alt="Лого" className="" />
+            </div>
+          </div>
+          <div className="footer__middle">
+            <h3 className="footer__middle__text">Оставить заявку</h3>
+            <input
+              type="text"
+              className="footer__middle__input"
+              name="FullName"
+            />
+            <input
+              type="email"
+              className="footer__middle__input"
+              name="Email"
+            />
+            <input type="text" className="footer__middle__input" />
+            <button className="footer__middle__button btn">
+              Отправить данные
+            </button>
+          </div>
+          <p className="footer__right">
+            Высокий уровень вовлечения представителей целевой аудитории является
+            чётким доказательством простого факта: разбавленное изрядной долей
+            эмпатии, рациональное мышление позволяет оценить значение модели
+            развития. Таким образом, консультация с широким активом обеспечивает
+            широкому кругу (специалистов) участие в формировании стандартных
+            подходов.
+          </p>
         </div>
       </div>
-      <div className="footer__middle">
-        <h3 className="footer__middle__text">Оставить заявку</h3>
-        <input type="text" className="footer__middle__input" name="FullName" />
-        <input type="email" className="footer__middle__input" name="Email" />
-        <input type="text" className="footer__middle__input" />
-        <button className="footer__middle__button btn">Отправить данные</button>
-      </div>
-      <p className="footer__right">
-        Высокий уровень вовлечения представителей целевой аудитории является
-        чётким доказательством простого факта: разбавленное изрядной долей
-        эмпатии, рациональное мышление позволяет оценить значение модели
-        развития. Таким образом, консультация с широким активом обеспечивает
-        широкому кругу (специалистов) участие в формировании стандартных
-        подходов.
-      </p>
     </footer>
   );
 }
