@@ -224,8 +224,8 @@ h3 {
   border-bottom: 2px solid #FF9900;
 }
 
-.header__listItemLink:focus {
-  border: 2px solid #FF9900;
+.header__listItemLink:focus-visible {
+  outline: 2px solid #FF9900;
 }
 
 .header__listItemLink:active {
@@ -476,6 +476,9 @@ h3 {
   font-size: 18px;
 }
 
+
+
+
 .howwork__main__info {
   grid-area: two;
 }
@@ -530,6 +533,10 @@ h3 {
 
 .howwork__mainStep:hover {
   color: #FF9900;
+}
+
+.howwork__mainStep:focus-visible {
+  outline: 2px solid #FF9900;
 }
 
 
@@ -603,11 +610,9 @@ h3 {
   padding: 39px 0;
   justify-content: space-between;
   border-top: 1px solid #cacaca;
-}
-
-.qna__listItem:last-child {
   border-bottom: 1px solid #cacaca;
-}
+} 
+
 
 
 /* .qna__listItem__card:hover {
@@ -654,7 +659,12 @@ h3 {
 }
 
 
+.qna__listItem__cardBtnDiv--circle {
+  color: #cacaca;
+}
+
 .qna__listItem__cardBtnDiv--X {
+  color: black;
   position: absolute;
   transition: transform 0.3s ease-in-out;
 }
@@ -663,6 +673,55 @@ h3 {
   transform: rotate(45deg);
   transition: transform 0.3s ease-in-out;
 }
+
+
+
+
+
+
+.qna__listItem:hover .qna__listItem__cardTitle {
+  color: #FF9900;
+}
+
+.qna__listItem:hover .qna__listItem__card {
+  border: 0px;
+  border-top: 1px solid #FF9900;
+  border-bottom: 1px solid #FF9900;
+}
+
+.qna__listItem:hover .qna__listItem__cardBtnDiv--circle {
+  color: #FF9900;
+}
+
+.qna__listItem:hover .qna__listItem__cardBtnDiv--X {
+  color: white;
+}
+
+
+
+.qna__listItem:focus-visible {
+  outline: 0px; 
+}
+
+
+.qna__listItem:focus-visible .qna__listItem__cardTitle {
+  color: #FF9900;
+}
+
+.qna__listItem:focus-visible .qna__listItem__card {
+  border-top: 1px solid #FF9900;
+  border-bottom: 1px solid #FF9900;
+}
+
+.qna__listItem:focus-visible .qna__listItem__cardBtnDiv--circle {
+  color: #FF9900;
+}
+
+.qna__listItem:focus-visible .qna__listItem__cardBtnDiv--X {
+  color: white;
+}
+
+
 
 /* FOOTER */
 

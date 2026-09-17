@@ -169,7 +169,7 @@ function Header({
       >
         <input type="text" className="header__searchBurgerText" />
         <Search className={'header__searchBurgerSearch'}/>
-        
+
         <img
           src={closed_search}
           alt="Кнопка закрытия поиска"
@@ -338,7 +338,7 @@ function Question({ index, title, desc }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <li className={`qna__listItem `}>
+    <li className={`qna__listItem `} tabIndex={0}>
       <div className="qna__listItem__card">
         <p className="qna__listItem__cardTitle">{title}</p>
         <MoreButton setIsOpen={setIsOpen} isOpen={isOpen} />
