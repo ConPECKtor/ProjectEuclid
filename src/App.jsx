@@ -13,6 +13,8 @@ import burgerButton from "./style/SVG/burgerButton.svg";
 
 import { Circle } from "./style/SVG/Circle.jsx";
 
+import { Search } from './style/SVG/search.jsx'
+
 import about_1 from "./style/SVG/about_1.svg";
 import about_2 from "./style/SVG/about_2.svg";
 import about_png from "./style/IMG/about.png";
@@ -26,8 +28,10 @@ import how2 from "./style/IMG/how_2.jpg";
 import how3 from "./style/IMG/how_3.jpg";
 import how4 from "./style/IMG/how_4.jpg";
 
-import ok from "./style/SVG/ok.svg";
-import vk from "./style/SVG/vk.svg";
+import {OK} from "./style/SVG/OK.jsx";
+import {VK} from "./style/SVG/vk.jsx";
+
+
 
 import { Step } from "./step.jsx";
 
@@ -43,6 +47,7 @@ function Banner() {
   return (
     <section
       className="banner"
+      id="banner"
       style={{ backgroundImage: `url(${currentBanner})` }}
     >
       <h2 className="banner__title">Проектные решения любой сложности</h2>
@@ -72,7 +77,7 @@ function Header({
   setSearchActive,
 }) {
   return (
-    <nav className="header">
+    <nav className="header" id="header">
       <div
         className={`header__burger ${
           burgerActive ? "header__burger--active" : ""
@@ -98,7 +103,7 @@ function Header({
             </a>
           </li>
           <li className="header__burgerListItem">
-            <a href="#stages" className="header__burgerListItemLink">
+            <a href="#howwork" className="header__burgerListItemLink">
               <b>Этапы</b>
             </a>
           </li>
@@ -108,7 +113,7 @@ function Header({
             </a>
           </li>
           <li className="header__burgerListItem">
-            <a href="#contacts" className="header__burgerListItemLink">
+            <a href="#footer" className="header__burgerListItemLink">
               <b>Контакты</b>
             </a>
           </li>
@@ -141,7 +146,7 @@ function Header({
           </a>
         </li>
         <li className="header__listItem">
-          <a href="#stages" className="header__listItemLink">
+          <a href="#howwork" className="header__listItemLink">
             <b>Этапы</b>
           </a>
         </li>
@@ -151,7 +156,7 @@ function Header({
           </a>
         </li>
         <li className="header__listItem">
-          <a href="#contacts" className="header__listItemLink">
+          <a href="#footer" className="header__listItemLink">
             <b>Контакты</b>
           </a>
         </li>
@@ -163,11 +168,8 @@ function Header({
         }`}
       >
         <input type="text" className="header__searchBurgerText" />
-        <img
-          src={search}
-          alt="Кнопка поиска"
-          className="header__searchBurgerSearch"
-        />
+        <Search className={'header__searchBurgerSearch'}/>
+        
         <img
           src={closed_search}
           alt="Кнопка закрытия поиска"
@@ -177,21 +179,14 @@ function Header({
         />
       </div>
 
-      <div className="header__searchButton">
-        <img
-          src={search}
-          alt="Кнопка поиска"
-          onClick={() => setSearchActive(true)}
-          style={{ cursor: "pointer" }}
-        />
-      </div>
+      <Search onClick={() => setSearchActive(true)} className={'header__searchButton'}/>
     </nav>
   );
 }
 
 function About() {
   return (
-    <section className="about">
+    <section className="about" id="about">
       <h3 className="about__title">О нас</h3>
       <p className="about__desc">
         Также как перспективное планирование создаёт необходимость включения в
@@ -273,7 +268,7 @@ function HowWork() {
   let currentStep = stepIMG[activeStep];
 
   return (
-    <section className="howwork">
+    <section className="howwork" id="howwork">
       <h3 className="howwork__title">Как мы работаем</h3>
 
       <div className="howwork__main">
@@ -361,7 +356,7 @@ function Question({ index, title, desc }) {
 
 function QNA() {
   return (
-    <section className="qna">
+    <section className="qna" id="qna">
       <h3 className="qna__title">Часто задаваемые вопросы</h3>
       <ul className="qna__list">
         {qnaTitles.map((_, index) => (
@@ -389,7 +384,7 @@ function Main() {
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="footer">
       <div className="container">
         <div className="container__footer">
           <div className="footer__left">
@@ -409,8 +404,8 @@ function Footer() {
             </ul>
 
             <div className="footer__left--socials">
-              <img src={ok} alt="Лого" className="" />
-              <img src={vk} alt="Лого" className="" />
+              <OK className={"footer__left__socialIcon"} />
+              <VK className={"footer__left__socialIcon"} />
             </div>
           </div>
           <div className="footer__middle">

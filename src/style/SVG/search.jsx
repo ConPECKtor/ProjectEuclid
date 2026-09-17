@@ -1,0 +1,28 @@
+export const Search = ({ onClick, className }) => {
+    return (
+        <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        className={className}
+        alt="Кнопка поиска"
+        onClick={onClick}
+        style={{ cursor: "pointer" }}
+      >
+        <rect
+          width="7.56126"
+          height="1.89031"
+          transform="matrix(0.713342 0.700816 -0.713342 0.700816 18.6064 17.3762)"
+          fill="currentColor"
+        />
+        <path
+          d="M10.9648 1C16.4852 1 20.9306 5.39189 20.9307 10.7725C20.9307 16.1531 16.4852 20.5449 10.9648 20.5449C5.44461 20.5448 1 16.153 1 10.7725C1.00008 5.39199 5.44466 1.00016 10.9648 1Z"
+          stroke="currentColor"
+          stroke-width="2"
+        />
+      </svg>     
+    );
+  };
+  
