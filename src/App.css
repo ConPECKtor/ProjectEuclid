@@ -1140,13 +1140,13 @@ input:hover, input:focus {
 
   .howwork__main {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 50px 284px auto;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto 160px auto;
     grid-template-areas:
       "one"
       "three"
       "two";
-    gap: 50px;
+    gap: 16px;
   }
 
   .howwork__main__steps {
@@ -1156,10 +1156,11 @@ input:hover, input:focus {
 
   .howwork__title {
     margin-bottom: 20px;
+    font-size: 24px;
   }
 
   .howwork__mainStep {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   .howwork__mainStep--active {
@@ -1168,17 +1169,17 @@ input:hover, input:focus {
 
   .howwork__main__infoTitle {
     font-weight: 700;
-    font-size: 24px;
+    font-size: 18px;
     margin-bottom: 8px;
     
   }
 
   .howwork__main__infoDesc {
-    margin-bottom: 25px;
+    margin-bottom: 16px;
   }
 
   .howwork__main__infoDescItem {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   .howwork__main__infoButtons--more {
@@ -1212,23 +1213,32 @@ input:hover, input:focus {
 
   .howwork__main__photo {
     grid-area: three;
-    max-width: 870px;
-    max-height: 460px;
+    width: 100%;
+    max-width: none;
+    height: 160px;
+    max-height: none;
+    border-radius: 16px;
   }
 
   .howwork__main__infoButtons {
     justify-content: start;
-    gap: 32px;
+    gap: 10px;
   }
 
   .howwork__main__infoButtons--more {
-    width: 175px;
-    height: 60px;
+    width: 162px;
+    height: 39px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 12px;
   }
 
   .howwork__main__infoButtons--deal {
-    width: 147px;
-    height: 60px;
+    width: 116px;
+    height: 39px;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 12px;
   }
 
 
@@ -1319,19 +1329,21 @@ input:hover, input:focus {
 
   .howwork__main__infoButtons {
     justify-content: start;
-    gap: 32px;
+    gap: 10px;
   }
 
   .howwork__main__infoButtons--more {
     width: 162px;
     height: 39px;
-    padding: 12px 44px;
+    padding: 12px 24px;
+    font-size: 12px;
   }
 
   .howwork__main__infoButtons--deal {
-    width: 118px;
+    width: 116px;
     height: 39px;
-    padding: 12px 32px;
+    padding: 12px 24px;
+    font-size: 12px;
   }
 
 
@@ -1494,13 +1506,15 @@ input:hover, input:focus {
   }
 
   .howwork__main__infoTitle {
-    font-size: 42px;
+    font-size: 18px;
   }
 
   .howwork__main__photo {
     grid-area: three;
-    max-width: auto;
-    max-height: auto;
+    width: 100%;
+    max-width: none;
+    height: 160px;
+    max-height: none;
   }
 
   .container__footer {
